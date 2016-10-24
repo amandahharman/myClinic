@@ -15,6 +15,10 @@
 		E0805EDB1DBE585100648B04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805ED91DBE585100648B04 /* LaunchScreen.storyboard */; };
 		E0805EE61DBE585100648B04 /* myClinicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805EE51DBE585100648B04 /* myClinicTests.swift */; };
 		E0805EF11DBE585100648B04 /* myClinicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805EF01DBE585100648B04 /* myClinicUITests.swift */; };
+		E0805F001DBE95F200648B04 /* Medications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805EFE1DBE95F200648B04 /* Medications.storyboard */; };
+		E0805F021DBE964300648B04 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F011DBE964300648B04 /* Log.storyboard */; };
+		E0805F051DBE965E00648B04 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F031DBE965E00648B04 /* Calendar.storyboard */; };
+		E0805F071DBE967500648B04 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F061DBE967500648B04 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		E0805EEC1DBE585100648B04 /* myClinicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myClinicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0805EF01DBE585100648B04 /* myClinicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myClinicUITests.swift; sourceTree = "<group>"; };
 		E0805EF21DBE585100648B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0805EFF1DBE95F200648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medications.storyboard; sourceTree = "<group>"; };
+		E0805F011DBE964300648B04 /* Log.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Log.storyboard; sourceTree = "<group>"; };
+		E0805F041DBE965E00648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
+		E0805F061DBE967500648B04 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,10 @@
 				E0805ECD1DBE585000648B04 /* AppDelegate.swift */,
 				E0805ECF1DBE585000648B04 /* ViewController.swift */,
 				E0805ED11DBE585100648B04 /* Main.storyboard */,
+				E0805F061DBE967500648B04 /* Home.storyboard */,
+				E0805F031DBE965E00648B04 /* Calendar.storyboard */,
+				E0805F011DBE964300648B04 /* Log.storyboard */,
+				E0805EFE1DBE95F200648B04 /* Medications.storyboard */,
 				E0805ED71DBE585100648B04 /* Assets.xcassets */,
 				E0805ED91DBE585100648B04 /* LaunchScreen.storyboard */,
 				E0805EDC1DBE585100648B04 /* Info.plist */,
@@ -238,9 +250,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0805F071DBE967500648B04 /* Home.storyboard in Resources */,
+				E0805F051DBE965E00648B04 /* Calendar.storyboard in Resources */,
 				E0805EDB1DBE585100648B04 /* LaunchScreen.storyboard in Resources */,
+				E0805F001DBE95F200648B04 /* Medications.storyboard in Resources */,
 				E0805ED81DBE585100648B04 /* Assets.xcassets in Resources */,
 				E0805ED31DBE585100648B04 /* Main.storyboard in Resources */,
+				E0805F021DBE964300648B04 /* Log.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +333,22 @@
 				E0805EDA1DBE585100648B04 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E0805EFE1DBE95F200648B04 /* Medications.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0805EFF1DBE95F200648B04 /* Base */,
+			);
+			name = Medications.storyboard;
+			sourceTree = "<group>";
+		};
+		E0805F031DBE965E00648B04 /* Calendar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0805F041DBE965E00648B04 /* Base */,
+			);
+			name = Calendar.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
