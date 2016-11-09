@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40EAC30A50F811EDCB6DD62A /* Pods_myClinic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */; };
 		E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECD1DBE585000648B04 /* AppDelegate.swift */; };
 		E0805ED01DBE585000648B04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECF1DBE585000648B04 /* MainViewController.swift */; };
 		E0805ED31DBE585100648B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805ED11DBE585100648B04 /* Main.storyboard */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A72E12C242DC6B9A4860D98B /* Pods-myClinic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myClinic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myClinic/Pods-myClinic.debug.xcconfig"; sourceTree = "<group>"; };
+		AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myClinic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0805ECA1DBE585000648B04 /* myClinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myClinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0805ECD1DBE585000648B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0805ECF1DBE585000648B04 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		E0D7454C1DD39A1700597ED2 /* Diagnosis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
 		E0D7454F1DD39BDB00597ED2 /* DataMangaer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMangaer.swift; sourceTree = "<group>"; };
 		E0D745511DD39CD600597ED2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F0E68AFDCB09520C50768CE3 /* Pods-myClinic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myClinic.release.xcconfig"; path = "Pods/Target Support Files/Pods-myClinic/Pods-myClinic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40EAC30A50F811EDCB6DD62A /* Pods_myClinic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53C81AE0DE04FD7F17218A34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A72E12C242DC6B9A4860D98B /* Pods-myClinic.debug.xcconfig */,
+				F0E68AFDCB09520C50768CE3 /* Pods-myClinic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		88857BF12A52FE5EC1174752 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E0805EC11DBE584E00648B04 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +129,8 @@
 				E0805EE41DBE585100648B04 /* myClinicTests */,
 				E0805EEF1DBE585100648B04 /* myClinicUITests */,
 				E0805ECB1DBE585000648B04 /* Products */,
+				53C81AE0DE04FD7F17218A34 /* Pods */,
+				88857BF12A52FE5EC1174752 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,9 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0805EF51DBE585200648B04 /* Build configuration list for PBXNativeTarget "myClinic" */;
 			buildPhases = (
+				A337D5C436DD18D20B3A4696 /* [CP] Check Pods Manifest.lock */,
 				E0805EC61DBE584F00648B04 /* Sources */,
 				E0805EC71DBE584F00648B04 /* Frameworks */,
 				E0805EC81DBE584F00648B04 /* Resources */,
+				C71BCF3B910EB96C9BCFFB4F /* [CP] Embed Pods Frameworks */,
+				9FE833E7898EDA3CACDCF413 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -363,6 +390,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9FE833E7898EDA3CACDCF413 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myClinic/Pods-myClinic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A337D5C436DD18D20B3A4696 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C71BCF3B910EB96C9BCFFB4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myClinic/Pods-myClinic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E0805EC61DBE584F00648B04 /* Sources */ = {
@@ -545,6 +620,7 @@
 		};
 		E0805EF61DBE585200648B04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A72E12C242DC6B9A4860D98B /* Pods-myClinic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8SGCMBBD8F;
@@ -558,6 +634,7 @@
 		};
 		E0805EF71DBE585200648B04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0E68AFDCB09520C50768CE3 /* Pods-myClinic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8SGCMBBD8F;
