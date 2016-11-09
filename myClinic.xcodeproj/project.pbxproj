@@ -19,6 +19,14 @@
 		E0805F021DBE964300648B04 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F011DBE964300648B04 /* Log.storyboard */; };
 		E0805F051DBE965E00648B04 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F031DBE965E00648B04 /* Calendar.storyboard */; };
 		E0805F071DBE967500648B04 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F061DBE967500648B04 /* Home.storyboard */; };
+		E0D745431DD397DD00597ED2 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745421DD397DD00597ED2 /* Patient.swift */; };
+		E0D745451DD397FD00597ED2 /* Physician .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745441DD397FD00597ED2 /* Physician .swift */; };
+		E0D745471DD3992600597ED2 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745461DD3992600597ED2 /* Symptom.swift */; };
+		E0D745491DD3997A00597ED2 /* Perscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745481DD3997A00597ED2 /* Perscription.swift */; };
+		E0D7454B1DD399A400597ED2 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7454A1DD399A400597ED2 /* Appointment.swift */; };
+		E0D7454D1DD39A1700597ED2 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7454C1DD39A1700597ED2 /* Diagnosis.swift */; };
+		E0D745501DD39BDB00597ED2 /* DataMangaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7454F1DD39BDB00597ED2 /* DataMangaer.swift */; };
+		E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745511DD39CD600597ED2 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +65,14 @@
 		E0805F011DBE964300648B04 /* Log.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Log.storyboard; sourceTree = "<group>"; };
 		E0805F041DBE965E00648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
 		E0805F061DBE967500648B04 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E0D745421DD397DD00597ED2 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		E0D745441DD397FD00597ED2 /* Physician .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Physician .swift"; sourceTree = "<group>"; };
+		E0D745461DD3992600597ED2 /* Symptom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
+		E0D745481DD3997A00597ED2 /* Perscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perscription.swift; sourceTree = "<group>"; };
+		E0D7454A1DD399A400597ED2 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		E0D7454C1DD39A1700597ED2 /* Diagnosis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
+		E0D7454F1DD39BDB00597ED2 /* DataMangaer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMangaer.swift; sourceTree = "<group>"; };
+		E0D745511DD39CD600597ED2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +126,7 @@
 				E0805ED91DBE585100648B04 /* LaunchScreen.storyboard */,
 				E0805ECD1DBE585000648B04 /* AppDelegate.swift */,
 				E0805F461DC10BEB00648B04 /* Models */,
+				E0D7454E1DD39BB300597ED2 /* Managers */,
 				E0805F431DC10BAE00648B04 /* Main */,
 				E0805F481DC10CA700648B04 /* Home */,
 				E0805F491DC10CC100648B04 /* Calendar */,
@@ -160,6 +177,12 @@
 		E0805F461DC10BEB00648B04 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E0D745421DD397DD00597ED2 /* Patient.swift */,
+				E0D745441DD397FD00597ED2 /* Physician .swift */,
+				E0D745461DD3992600597ED2 /* Symptom.swift */,
+				E0D745481DD3997A00597ED2 /* Perscription.swift */,
+				E0D7454A1DD399A400597ED2 /* Appointment.swift */,
+				E0D7454C1DD39A1700597ED2 /* Diagnosis.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -194,6 +217,15 @@
 				E0805EFE1DBE95F200648B04 /* Medications.storyboard */,
 			);
 			name = Medications;
+			sourceTree = "<group>";
+		};
+		E0D7454E1DD39BB300597ED2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7454F1DD39BDB00597ED2 /* DataMangaer.swift */,
+				E0D745511DD39CD600597ED2 /* NetworkManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,9 +369,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D745451DD397FD00597ED2 /* Physician .swift in Sources */,
+				E0D745491DD3997A00597ED2 /* Perscription.swift in Sources */,
+				E0D745471DD3992600597ED2 /* Symptom.swift in Sources */,
+				E0D7454D1DD39A1700597ED2 /* Diagnosis.swift in Sources */,
+				E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */,
+				E0D7454B1DD399A400597ED2 /* Appointment.swift in Sources */,
 				E0805ED01DBE585000648B04 /* MainViewController.swift in Sources */,
+				E0D745431DD397DD00597ED2 /* Patient.swift in Sources */,
 				E0805ED61DBE585100648B04 /* myClinic.xcdatamodeld in Sources */,
 				E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */,
+				E0D745501DD39BDB00597ED2 /* DataMangaer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
