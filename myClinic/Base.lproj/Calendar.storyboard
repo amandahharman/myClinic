@@ -27,10 +27,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wb-Ko-asW">
-                                        <state key="normal" title="Prv"/>
+                                        <state key="normal" title="&lt;"/>
+                                        <connections>
+                                            <action selector="previousButtonPressed:" destination="BFM-dl-jVA" eventType="touchUpInside" id="Dmr-Ju-tQo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISi-GL-XLF">
-                                        <state key="normal" title="Nxt"/>
+                                        <state key="normal" title="&gt;"/>
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="BFM-dl-jVA" eventType="touchUpInside" id="jE0-v0-F16"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -128,6 +134,15 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="YFW-i4-QJL" id="FPf-In-gQ6"/>
+                        <outlet property="fri" destination="MUb-ce-h3L" id="QoS-vE-7wM"/>
+                        <outlet property="mon" destination="YST-Kl-eIy" id="t0f-sz-YHL"/>
+                        <outlet property="monthLabel" destination="yeH-mN-xFK" id="uY1-g4-GFA"/>
+                        <outlet property="sat" destination="UoG-Cc-hVj" id="gpf-0P-jYM"/>
+                        <outlet property="sun" destination="BTw-Vw-B6t" id="ZmQ-0L-b2C"/>
+                        <outlet property="thurs" destination="PbK-xp-aqd" id="5SF-Cc-kbx"/>
+                        <outlet property="tues" destination="JzB-ZE-tov" id="nSM-td-hyq"/>
+                        <outlet property="wed" destination="u40-sG-p4Q" id="fkX-aa-kxL"/>
+                        <outlet property="yearLabel" destination="fvk-eT-bY0" id="rJ6-ZN-BV9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5n-lZ-dl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
