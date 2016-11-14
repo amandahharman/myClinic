@@ -34,7 +34,10 @@ class DataManager {
                         zip: patient["zip"] as! Int,
                         phoneNumber: patient["phoneNumber"] as! String,
                         accountBalance: patient["accountBalance"] as! Double,
-                        attendingPhysicianID: patient["attendingPhysicianID"] as! Int
+                        attendingPhysicianID: patient["attendingPhysicianID"] as! Int,
+                        age: nil,
+                        weight: nil,
+                        height: nil
                     )
                 }
                 completion(.Success(self.user))
