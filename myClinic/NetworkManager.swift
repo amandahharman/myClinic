@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 //Only place we will need swifty JSON and Alamofire
 class NetworkManager{

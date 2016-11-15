@@ -19,4 +19,7 @@ struct Patient{
     var phoneNumber: String
     var accountBalance: Double
     var attendingPhysicianID: Int
+    var age: Int?
+    var weight: Double?
+    var height: String?
 }

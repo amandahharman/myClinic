@@ -1,25 +1,23 @@
 //
-//  MainViewController.swift
+//  LogViewController.swift
 //  myClinic
 //
-//  Created by Amanda Harman on 10/24/16.
+//  Created by Amanda Harman on 11/14/16.
 //  Copyright © 2016 Amanda Harman. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class LogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
 
 }
-

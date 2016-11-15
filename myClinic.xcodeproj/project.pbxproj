@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		40EAC30A50F811EDCB6DD62A /* Pods_myClinic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */; };
 		E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECD1DBE585000648B04 /* AppDelegate.swift */; };
-		E0805ED01DBE585000648B04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECF1DBE585000648B04 /* MainViewController.swift */; };
+		E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECF1DBE585000648B04 /* LogInViewController.swift */; };
 		E0805ED31DBE585100648B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805ED11DBE585100648B04 /* Main.storyboard */; };
 		E0805ED61DBE585100648B04 /* myClinic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0805ED41DBE585100648B04 /* myClinic.xcdatamodeld */; };
 		E0805ED81DBE585100648B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0805ED71DBE585100648B04 /* Assets.xcassets */; };
@@ -19,7 +19,7 @@
 		E0805F001DBE95F200648B04 /* Medications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805EFE1DBE95F200648B04 /* Medications.storyboard */; };
 		E0805F021DBE964300648B04 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F011DBE964300648B04 /* Log.storyboard */; };
 		E0805F051DBE965E00648B04 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F031DBE965E00648B04 /* Calendar.storyboard */; };
-		E0805F071DBE967500648B04 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F061DBE967500648B04 /* Home.storyboard */; };
+		E0805F071DBE967500648B04 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F061DBE967500648B04 /* UserInfo.storyboard */; };
 		E0D745431DD397DD00597ED2 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745421DD397DD00597ED2 /* Patient.swift */; };
 		E0D745451DD397FD00597ED2 /* Physician .swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745441DD397FD00597ED2 /* Physician .swift */; };
 		E0D745471DD3992600597ED2 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745461DD3992600597ED2 /* Symptom.swift */; };
@@ -28,6 +28,15 @@
 		E0D7454D1DD39A1700597ED2 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7454C1DD39A1700597ED2 /* Diagnosis.swift */; };
 		E0D745501DD39BDB00597ED2 /* DataMangaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7454F1DD39BDB00597ED2 /* DataMangaer.swift */; };
 		E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745511DD39CD600597ED2 /* NetworkManager.swift */; };
+		E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */; };
+		E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */; };
+		E0E24A7D1DDA04D40054D962 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E24A7C1DDA04D40054D962 /* CellView.xib */; };
+		E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A7E1DDA05170054D962 /* CellView.swift */; };
+		E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A801DDA23A90054D962 /* TabBarViewController.swift */; };
+		E0E24A831DDA29700054D962 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A821DDA29700054D962 /* Color.swift */; };
+		E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */; };
+		E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */; };
+		E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A881DDA9EE60054D962 /* LogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +61,7 @@
 		AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myClinic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0805ECA1DBE585000648B04 /* myClinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myClinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0805ECD1DBE585000648B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E0805ECF1DBE585000648B04 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E0805ECF1DBE585000648B04 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E0805ED21DBE585100648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0805ED51DBE585100648B04 /* myClinic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myClinic.xcdatamodel; sourceTree = "<group>"; };
 		E0805ED71DBE585100648B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +76,7 @@
 		E0805EFF1DBE95F200648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medications.storyboard; sourceTree = "<group>"; };
 		E0805F011DBE964300648B04 /* Log.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Log.storyboard; sourceTree = "<group>"; };
 		E0805F041DBE965E00648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
-		E0805F061DBE967500648B04 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E0805F061DBE967500648B04 /* UserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
 		E0D745421DD397DD00597ED2 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		E0D745441DD397FD00597ED2 /* Physician .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Physician .swift"; sourceTree = "<group>"; };
 		E0D745461DD3992600597ED2 /* Symptom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
@@ -76,6 +85,15 @@
 		E0D7454C1DD39A1700597ED2 /* Diagnosis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
 		E0D7454F1DD39BDB00597ED2 /* DataMangaer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMangaer.swift; sourceTree = "<group>"; };
 		E0D745511DD39CD600597ED2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		E0E24A7C1DDA04D40054D962 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		E0E24A7E1DDA05170054D962 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		E0E24A801DDA23A90054D962 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E0E24A821DDA29700054D962 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		E0E24A881DDA9EE60054D962 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		F0E68AFDCB09520C50768CE3 /* Pods-myClinic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myClinic.release.xcconfig"; path = "Pods/Target Support Files/Pods-myClinic/Pods-myClinic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,8 +169,8 @@
 				E0805ECD1DBE585000648B04 /* AppDelegate.swift */,
 				E0805F461DC10BEB00648B04 /* Models */,
 				E0D7454E1DD39BB300597ED2 /* Managers */,
-				E0805F431DC10BAE00648B04 /* Main */,
-				E0805F481DC10CA700648B04 /* Home */,
+				E0805F431DC10BAE00648B04 /* LogIn */,
+				E0805F481DC10CA700648B04 /* UserInfo */,
 				E0805F491DC10CC100648B04 /* Calendar */,
 				E0805F4A1DC10CCD00648B04 /* Log */,
 				E0805F4B1DC10CD200648B04 /* Medications */,
@@ -179,13 +197,14 @@
 			path = myClinicUITests;
 			sourceTree = "<group>";
 		};
-		E0805F431DC10BAE00648B04 /* Main */ = {
+		E0805F431DC10BAE00648B04 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
 				E0805ED11DBE585100648B04 /* Main.storyboard */,
-				E0805ECF1DBE585000648B04 /* MainViewController.swift */,
+				E0E24A801DDA23A90054D962 /* TabBarViewController.swift */,
+				E0805ECF1DBE585000648B04 /* LogInViewController.swift */,
 			);
-			name = Main;
+			name = LogIn;
 			sourceTree = "<group>";
 		};
 		E0805F441DC10BC900648B04 /* Resources */ = {
@@ -194,6 +213,7 @@
 				E0805ED71DBE585100648B04 /* Assets.xcassets */,
 				E0805EDC1DBE585100648B04 /* Info.plist */,
 				E0805ED41DBE585100648B04 /* myClinic.xcdatamodeld */,
+				E0E24A821DDA29700054D962 /* Color.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -207,22 +227,28 @@
 				E0D745481DD3997A00597ED2 /* Perscription.swift */,
 				E0D7454A1DD399A400597ED2 /* Appointment.swift */,
 				E0D7454C1DD39A1700597ED2 /* Diagnosis.swift */,
+				E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		E0805F481DC10CA700648B04 /* Home */ = {
+		E0805F481DC10CA700648B04 /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				E0805F061DBE967500648B04 /* Home.storyboard */,
+				E0805F061DBE967500648B04 /* UserInfo.storyboard */,
+				E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */,
 			);
-			name = Home;
+			name = UserInfo;
 			sourceTree = "<group>";
 		};
 		E0805F491DC10CC100648B04 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
 				E0805F031DBE965E00648B04 /* Calendar.storyboard */,
+				E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */,
+				E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */,
+				E0E24A7C1DDA04D40054D962 /* CellView.xib */,
+				E0E24A7E1DDA05170054D962 /* CellView.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -231,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				E0805F011DBE964300648B04 /* Log.storyboard */,
+				E0E24A881DDA9EE60054D962 /* LogViewController.swift */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -365,7 +392,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0805F071DBE967500648B04 /* Home.storyboard in Resources */,
+				E0E24A7D1DDA04D40054D962 /* CellView.xib in Resources */,
+				E0805F071DBE967500648B04 /* UserInfo.storyboard in Resources */,
 				E0805F051DBE965E00648B04 /* Calendar.storyboard in Resources */,
 				E0805EDB1DBE585100648B04 /* LaunchScreen.storyboard in Resources */,
 				E0805F001DBE95F200648B04 /* Medications.storyboard in Resources */,
@@ -449,11 +477,19 @@
 				E0D745471DD3992600597ED2 /* Symptom.swift in Sources */,
 				E0D7454D1DD39A1700597ED2 /* Diagnosis.swift in Sources */,
 				E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */,
+				E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */,
+				E0E24A831DDA29700054D962 /* Color.swift in Sources */,
 				E0D7454B1DD399A400597ED2 /* Appointment.swift in Sources */,
-				E0805ED01DBE585000648B04 /* MainViewController.swift in Sources */,
+				E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */,
+				E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */,
 				E0D745431DD397DD00597ED2 /* Patient.swift in Sources */,
+				E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */,
 				E0805ED61DBE585100648B04 /* myClinic.xcdatamodeld in Sources */,
 				E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */,
+				E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */,
+				E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */,
+				E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */,
+				E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */,
 				E0D745501DD39BDB00597ED2 /* DataMangaer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

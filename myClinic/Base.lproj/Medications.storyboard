@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MDT-uL-0Ni">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VHO-9k-607">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Medications-->
         <scene sceneID="J0O-L2-6MM">
             <objects>
-                <viewController id="VHO-9k-607" sceneMemberID="viewController">
+                <viewController title="Medications" id="VHO-9k-607" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S1Z-WG-Us4"/>
                         <viewControllerLayoutGuide type="bottom" id="YG7-vD-2dz"/>
@@ -57,25 +57,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWJ-tq-jU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12" y="600.44977511244383"/>
-        </scene>
-        <!--Medications-->
-        <scene sceneID="Arw-vH-kIZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MDT-uL-0Ni" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Medications" id="TX3-5t-4Ah"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1ZL-pD-f3q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="VHO-9k-607" kind="relationship" relationship="rootViewController" id="Rb1-P8-adv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KZ9-Yr-kbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-927.20000000000005" y="600.44977511244383"/>
         </scene>
     </scenes>
 </document>

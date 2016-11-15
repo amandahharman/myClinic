@@ -17,5 +17,5 @@ struct Physician{
     var state: String
     var zip: Int
     var businessPhoneNumber: String
-    var homePhoneNumber: String
+    var homePhoneNumber: String?
 }
