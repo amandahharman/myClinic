@@ -32,6 +32,19 @@ class CalendarViewController: UIViewController {
     var selectedEvents: [CalendarEvent] = []
     var selectedDate: Date?
     
+    lazy var todayDate : String = {
+        [weak self] in
+        let aString = self!.f.string(from: Date())
+        return aString
+        }()
+    lazy var f : DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy MM dd"
+        
+        return f
+    }()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "yyyy MM dd"
@@ -108,7 +121,6 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             for event in eventArray {
                 let eventDate = formatter.date(from: event.startDate)
                 if date == eventDate{
-                    cell.eventLine.isHidden = false
                     cell.eventsOnThisDay.append(event)
                     
                 }
@@ -125,15 +137,18 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             return
         }
         if cellState.isSelected {
-            cell.selectedView.isHidden = false
+            cell.dayLabel.textColor = UIColor(hexString: "85CEC4")
         } else {
-            cell.selectedView.isHidden = true
+            cell.dayLabel.textColor = UIColor.white
         }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         print("Cell selected at \(date)")
-        handleCellSelection(view: cell, cellState: cellState)
+        if !formatter.string(from: date).isEqual(todayDate) {
+
+            handleCellSelection(view: cell, cellState: cellState)
+        }
         let cell = cell as! CellView
         selectedEvents = cell.eventsOnThisDay
         tableView.reloadData()
@@ -143,6 +158,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
     }
+  
     
 }
 
@@ -152,6 +168,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
         let cell: CalendarTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CalendarEventCell") as! CalendarTableViewCell
         if selectedEvents.count > 0 {
             if let appointment = selectedEvents[indexPath.item].appointment {
+                cell.titleLabel.isHidden = false
                 cell.titleLabel.text = "Doctor Appointment"
                 
                 cell.descriptionLabel.isHidden = false
@@ -166,6 +183,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.symptomIcon.isHidden = true
             }
             if let symptom = selectedEvents[indexPath.item].symptom{
+                cell.titleLabel.isHidden = false
                 cell.titleLabel.text = symptom.symptomName
                 
                 if let description = selectedEvents[indexPath.item].description{
@@ -182,8 +200,8 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
             return cell
         }
         else {
-            cell.titleLabel.text = "No Events To Show"
-            cell.descriptionLabel.isHidden = true
+            cell.titleLabel.isHidden = true
+            cell.descriptionLabel.text = "No Events To Show"
             cell.timeLabel.isHidden = true
             cell.symptomIcon.isHidden = true
             cell.typeIndicator.isHidden = true
