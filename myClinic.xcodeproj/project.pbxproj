@@ -32,6 +32,10 @@
 		E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */; };
 		E0E24A7D1DDA04D40054D962 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E24A7C1DDA04D40054D962 /* CellView.xib */; };
 		E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A7E1DDA05170054D962 /* CellView.swift */; };
+		E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A801DDA23A90054D962 /* TabBarViewController.swift */; };
+		E0E24A831DDA29700054D962 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A821DDA29700054D962 /* Color.swift */; };
+		E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */; };
+		E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E0E24A7C1DDA04D40054D962 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		E0E24A7E1DDA05170054D962 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		E0E24A801DDA23A90054D962 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E0E24A821DDA29700054D962 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		F0E68AFDCB09520C50768CE3 /* Pods-myClinic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myClinic.release.xcconfig"; path = "Pods/Target Support Files/Pods-myClinic/Pods-myClinic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				E0805ED11DBE585100648B04 /* Main.storyboard */,
+				E0E24A801DDA23A90054D962 /* TabBarViewController.swift */,
 				E0805ECF1DBE585000648B04 /* LogInViewController.swift */,
 			);
 			name = LogIn;
@@ -202,6 +211,7 @@
 				E0805ED71DBE585100648B04 /* Assets.xcassets */,
 				E0805EDC1DBE585100648B04 /* Info.plist */,
 				E0805ED41DBE585100648B04 /* myClinic.xcdatamodeld */,
+				E0E24A821DDA29700054D962 /* Color.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -215,6 +225,7 @@
 				E0D745481DD3997A00597ED2 /* Perscription.swift */,
 				E0D7454A1DD399A400597ED2 /* Appointment.swift */,
 				E0D7454C1DD39A1700597ED2 /* Diagnosis.swift */,
+				E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -233,6 +244,7 @@
 			children = (
 				E0805F031DBE965E00648B04 /* Calendar.storyboard */,
 				E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */,
+				E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */,
 				E0E24A7C1DDA04D40054D962 /* CellView.xib */,
 				E0E24A7E1DDA05170054D962 /* CellView.swift */,
 			);
@@ -462,14 +474,18 @@
 				E0D745471DD3992600597ED2 /* Symptom.swift in Sources */,
 				E0D7454D1DD39A1700597ED2 /* Diagnosis.swift in Sources */,
 				E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */,
+				E0E24A831DDA29700054D962 /* Color.swift in Sources */,
 				E0D7454B1DD399A400597ED2 /* Appointment.swift in Sources */,
 				E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */,
 				E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */,
 				E0D745431DD397DD00597ED2 /* Patient.swift in Sources */,
+				E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */,
 				E0805ED61DBE585100648B04 /* myClinic.xcdatamodeld in Sources */,
 				E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */,
 				E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */,
 				E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */,
+				E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */,
+				E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */,
 				E0D745501DD39BDB00597ED2 /* DataMangaer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

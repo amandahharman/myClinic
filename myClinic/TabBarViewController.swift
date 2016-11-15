@@ -8,28 +8,13 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+class TabBarViewController: UITabBarController, UINavigationControllerDelegate {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        
+        // Sets the default color of the icon of the selected UITabBarItem and Title
+        UITabBar.appearance().tintColor = UIColor.white
+        // Sets the default color of the background of the UITabBar
+        UITabBar.appearance().barTintColor = UIColor(hexString: "ea5370")
     }
-    */
-
 }
