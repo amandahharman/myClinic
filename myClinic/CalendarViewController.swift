@@ -114,7 +114,11 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
                 }
             }
         }
-        
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        calendar.reloadData()
+
     }
     func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
         guard let cell = view as? CellView  else {

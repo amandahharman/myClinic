@@ -42,9 +42,10 @@ class CellView: JTAppleDayCellView {
 
         
         eventLine.isHidden = true
-        selectedView.isHidden = false
-        if !formatter.string(from: date).isEqual(todayDate) {
-            selectedView.isHidden = true
+        selectedView.isHidden = true
+        selectedView.isHidden = true
+        if formatter.string(from: date).isEqual(todayDate) {
+            dayLabel.textColor = UIColor.darkGray
         }
         
         

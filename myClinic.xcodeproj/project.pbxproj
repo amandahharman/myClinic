@@ -36,6 +36,7 @@
 		E0E24A831DDA29700054D962 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A821DDA29700054D962 /* Color.swift */; };
 		E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */; };
 		E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */; };
+		E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A881DDA9EE60054D962 /* LogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		E0E24A821DDA29700054D962 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		E0E24A881DDA9EE60054D962 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		F0E68AFDCB09520C50768CE3 /* Pods-myClinic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myClinic.release.xcconfig"; path = "Pods/Target Support Files/Pods-myClinic/Pods-myClinic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				E0805F011DBE964300648B04 /* Log.storyboard */,
+				E0E24A881DDA9EE60054D962 /* LogViewController.swift */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				E0D745471DD3992600597ED2 /* Symptom.swift in Sources */,
 				E0D7454D1DD39A1700597ED2 /* Diagnosis.swift in Sources */,
 				E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */,
+				E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */,
 				E0E24A831DDA29700054D962 /* Color.swift in Sources */,
 				E0D7454B1DD399A400597ED2 /* Appointment.swift in Sources */,
 				E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */,
