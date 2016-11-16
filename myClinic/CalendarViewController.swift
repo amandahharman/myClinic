@@ -121,6 +121,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             for event in eventArray {
                 let eventDate = formatter.date(from: event.startDate)
                 if date == eventDate{
+                    cell.eventIndicator.isHidden = false
                     cell.eventsOnThisDay.append(event)
                     
                 }
