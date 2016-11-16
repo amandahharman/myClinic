@@ -134,7 +134,6 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="h0B-yM-P9R" secondAttribute="trailing" id="1yy-4U-C9x"/>
                                             <constraint firstItem="h0B-yM-P9R" firstAttribute="leading" secondItem="gWF-i3-5qs" secondAttribute="leading" id="X3q-5m-zJn"/>
-                                            <constraint firstItem="WhZ-LB-txb" firstAttribute="leading" secondItem="gWF-i3-5qs" secondAttribute="leading" constant="20" symbolic="YES" id="gcR-hX-lIa"/>
                                             <constraint firstAttribute="trailing" secondItem="WhZ-LB-txb" secondAttribute="trailing" id="nqE-hd-izw"/>
                                         </constraints>
                                     </stackView>
