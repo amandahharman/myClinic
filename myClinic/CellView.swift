@@ -15,7 +15,7 @@ class CellView: JTAppleDayCellView {
     @IBOutlet var dayLabel: UILabel!
     var eventsOnThisDay = [CalendarEvent]()
     
-    @IBOutlet weak var eventLine: UIImageView!
+
     
     lazy var todayDate : String = {
         [weak self] in
@@ -37,15 +37,15 @@ class CellView: JTAppleDayCellView {
             self.dayLabel.textColor = UIColor.lightGray
         }
         
-        self.selectedView.layer.cornerRadius =  self.selectedView.frame.width  / 2
-        selectedView.backgroundColor = UIColor.lightGray
+        selectedView.backgroundColor = UIColor(hexString: "85CEC4")
 
         
-        eventLine.isHidden = true
+
         selectedView.isHidden = true
         selectedView.isHidden = true
         if formatter.string(from: date).isEqual(todayDate) {
-            dayLabel.textColor = UIColor.darkGray
+            selectedView.backgroundColor = UIColor(hexString: "85CEC4")
+            selectedView.isHidden = false
         }
         
         

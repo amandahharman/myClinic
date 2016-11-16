@@ -13,41 +13,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eio-xg-EgM">
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="2DY-v9-N7O"/>
-                        <constraint firstAttribute="height" constant="30" id="7qU-Ep-FJg"/>
-                    </constraints>
+                    <color key="backgroundColor" red="0.52156862745098043" green="0.80784313725490198" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPH-x6-k18">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="fvW-Nf-4BG">
-                    <constraints>
-                        <constraint firstAttribute="height" constant="8" id="owX-zb-IA7"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <constraints>
                 <constraint firstItem="vPH-x6-k18" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ea3-0u-KEV"/>
-                <constraint firstAttribute="trailing" secondItem="fvW-Nf-4BG" secondAttribute="trailing" id="P8f-Go-dpN"/>
-                <constraint firstItem="Eio-xg-EgM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RN1-5q-6Ob"/>
-                <constraint firstAttribute="bottom" secondItem="fvW-Nf-4BG" secondAttribute="bottom" id="hbm-4L-AZL"/>
-                <constraint firstItem="fvW-Nf-4BG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mTF-VX-fZf"/>
-                <constraint firstItem="Eio-xg-EgM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rW9-5o-3jv"/>
+                <constraint firstItem="Eio-xg-EgM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RDT-FC-hOR"/>
+                <constraint firstItem="Eio-xg-EgM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="S8T-FQ-f7t"/>
+                <constraint firstAttribute="trailing" secondItem="Eio-xg-EgM" secondAttribute="trailing" id="k0a-lK-ZwE"/>
+                <constraint firstAttribute="bottom" secondItem="Eio-xg-EgM" secondAttribute="bottom" id="wyp-O0-6eA"/>
                 <constraint firstItem="vPH-x6-k18" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xNC-Lw-ZZn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayLabel" destination="vPH-x6-k18" id="HVf-Zd-YtS"/>
-                <outlet property="eventLine" destination="fvW-Nf-4BG" id="xKn-dh-imd"/>
                 <outlet property="selectedView" destination="Eio-xg-EgM" id="icj-Yx-v37"/>
             </connections>
             <point key="canvasLocation" x="-70" y="323.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="Line" width="90" height="5"/>
-    </resources>
 </document>

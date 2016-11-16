@@ -37,6 +37,7 @@
 		E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */; };
 		E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */; };
 		E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A881DDA9EE60054D962 /* LogViewController.swift */; };
+		E0E41D161DDAE58600F081A8 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		E0E24A881DDA9EE60054D962 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
 		F0E68AFDCB09520C50768CE3 /* Pods-myClinic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myClinic.release.xcconfig"; path = "Pods/Target Support Files/Pods-myClinic/Pods-myClinic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +260,7 @@
 			children = (
 				E0805F011DBE964300648B04 /* Log.storyboard */,
 				E0E24A881DDA9EE60054D962 /* LogViewController.swift */,
+				E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */,
 				E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */,
 				E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */,
+				E0E41D161DDAE58600F081A8 /* LogTableViewCell.swift in Sources */,
 				E0D745501DD39BDB00597ED2 /* DataMangaer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
