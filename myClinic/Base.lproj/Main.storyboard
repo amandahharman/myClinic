@@ -59,14 +59,14 @@
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="9T5-TU-Qth">
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fxu-xa-gIB">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fxu-xa-gIB">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myClinic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stc-4z-mq9">
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LvX-IZ-Ddc">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart With Pulse-100" translatesAutoresizingMaskIntoConstraints="NO" id="LvX-IZ-Ddc">
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="3MR-iI-zp2"/>
                                                     <constraint firstAttribute="height" constant="100" id="KaB-qs-fjD"/>
@@ -76,11 +76,12 @@
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gWF-i3-5qs">
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WhZ-LB-txb">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WhZ-LB-txb">
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pjg-py-lGu">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="username" translatesAutoresizingMaskIntoConstraints="NO" id="pjg-py-lGu">
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="iRv-AQ-AUb"/>
+                                                            <constraint firstAttribute="height" constant="30" id="Z9m-Jx-mHb"/>
+                                                            <constraint firstAttribute="width" constant="30" id="iRv-AQ-AUb"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjP-rs-HBr">
@@ -93,17 +94,21 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Fyp-JH-o9H"/>
+                                                </constraints>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider Line" translatesAutoresizingMaskIntoConstraints="NO" id="1jd-2y-diJ">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Rfj-kr-Tha"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h0B-yM-P9R">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h0B-yM-P9R">
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Sk-dI-cNT">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="6Sk-dI-cNT">
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="W63-IR-2UP"/>
+                                                            <constraint firstAttribute="width" constant="30" id="W63-IR-2UP"/>
+                                                            <constraint firstAttribute="height" constant="30" id="bfM-kM-1P2"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7m-II-XPo">
@@ -116,6 +121,9 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="dZ0-x2-OKX"/>
+                                                </constraints>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider Line" translatesAutoresizingMaskIntoConstraints="NO" id="mZ2-FN-chT">
                                                 <constraints>
@@ -126,7 +134,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="h0B-yM-P9R" secondAttribute="trailing" id="1yy-4U-C9x"/>
                                             <constraint firstItem="h0B-yM-P9R" firstAttribute="leading" secondItem="gWF-i3-5qs" secondAttribute="leading" id="X3q-5m-zJn"/>
-                                            <constraint firstItem="WhZ-LB-txb" firstAttribute="leading" secondItem="gWF-i3-5qs" secondAttribute="leading" id="gcR-hX-lIa"/>
+                                            <constraint firstItem="WhZ-LB-txb" firstAttribute="leading" secondItem="gWF-i3-5qs" secondAttribute="leading" constant="20" symbolic="YES" id="gcR-hX-lIa"/>
                                             <constraint firstAttribute="trailing" secondItem="WhZ-LB-txb" secondAttribute="trailing" id="nqE-hd-izw"/>
                                         </constraints>
                                     </stackView>
@@ -194,9 +202,12 @@
     </scenes>
     <resources>
         <image name="Divider Line" width="338" height="1"/>
+        <image name="Heart With Pulse-100" width="100" height="100"/>
         <image name="calendar" width="21" height="24"/>
         <image name="contacts" width="96" height="96"/>
         <image name="notebook" width="21" height="26"/>
+        <image name="password" width="40" height="44"/>
         <image name="timer" width="22" height="22"/>
+        <image name="username" width="40" height="39"/>
     </resources>
 </document>
