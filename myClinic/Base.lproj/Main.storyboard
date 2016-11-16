@@ -12,8 +12,9 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9q8-Vg-ocH" customClass="TabBarViewController" customModule="myClinic" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="w3y-be-ifB">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -162,7 +163,7 @@
         <scene sceneID="NXy-d5-g5R">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="medications" storyboardName="Medications" id="86T-cE-CUs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="timer" selectedImage="timer" id="XUK-5G-w0s"/>
+                    <tabBarItem key="tabBarItem" title="" image="timer" id="XUK-5G-w0s"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJC-h6-pts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,7 +173,7 @@
         <scene sceneID="cTv-FN-Ghx">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="log" storyboardName="Log" id="WJP-F8-Kkv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="notebook" selectedImage="notebook" id="gij-nU-nXv"/>
+                    <tabBarItem key="tabBarItem" title="" image="notebook" id="gij-nU-nXv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beu-jO-8xX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,7 +183,7 @@
         <scene sceneID="B1U-BR-pcj">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="calendar" storyboardName="Calendar" id="L4H-RD-Ssr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="calendar" selectedImage="calendar" id="Pv1-hN-zdw"/>
+                    <tabBarItem key="tabBarItem" title="" image="calendar" id="Pv1-hN-zdw"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVt-Ge-fdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,7 +193,7 @@
         <scene sceneID="H1r-zF-Lra">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="userInfo" storyboardName="UserInfo" id="zYH-GL-rjg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="contacts" selectedImage="contacts" id="G5Z-H6-jAu"/>
+                    <tabBarItem key="tabBarItem" title="" image="contacts" id="G5Z-H6-jAu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ymb-o9-yaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

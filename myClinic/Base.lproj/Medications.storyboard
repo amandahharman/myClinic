@@ -59,14 +59,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4L-2X-hRv">
+                                <frame key="frameInset" minX="321" minY="153" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.80000000000000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.76862745098039209" green="0.47843137254901957" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.67450980392156867" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cm9-wd-Zhw" firstAttribute="centerX" secondItem="okM-wv-oGi" secondAttribute="centerX" id="HnI-fB-0yK"/>
                             <constraint firstItem="YG7-vD-2dz" firstAttribute="top" secondItem="Fa0-Z2-j57" secondAttribute="bottom" id="TUG-GA-u32"/>
+                            <constraint firstItem="Fa0-Z2-j57" firstAttribute="top" secondItem="k4L-2X-hRv" secondAttribute="bottom" constant="8" id="Za4-EE-z3o"/>
                             <constraint firstAttribute="trailing" secondItem="Fa0-Z2-j57" secondAttribute="trailing" id="b9I-oD-VPg"/>
                             <constraint firstItem="Fa0-Z2-j57" firstAttribute="leading" secondItem="okM-wv-oGi" secondAttribute="leading" id="cbL-f4-ji6"/>
                             <constraint firstItem="cm9-wd-Zhw" firstAttribute="top" secondItem="S1Z-WG-Us4" secondAttribute="bottom" constant="20" id="def-mI-7iX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k4L-2X-hRv" secondAttribute="trailing" constant="8" id="jG2-tt-gmd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2qE-hO-TzX">
