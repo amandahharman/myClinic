@@ -52,6 +52,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="427" id="ZAG-2m-qJm"/>
                                 </constraints>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SymptomCell" rowHeight="62" id="60i-WM-AZn" customClass="LogTableViewCell" customModule="myClinic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="62"/>
@@ -60,22 +61,21 @@
                                             <frame key="frameInset" width="375" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYu-99-nTa">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYu-99-nTa">
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zi-0s-G9J">
-                                                            <state key="normal" image="done"/>
-                                                            <connections>
-                                                                <action selector="symptomSelected:" destination="60i-WM-AZn" eventType="touchUpInside" id="RRr-pT-9Wf"/>
-                                                            </connections>
-                                                        </button>
+                                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="8vq-pf-kef">
+                                                            <color key="backgroundColor" red="0.4431372549" green="0.80000000000000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="MRC-XA-xOt"/>
+                                                                <constraint firstAttribute="height" constant="30" id="YCJ-HB-NCu"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.4431372549" green="0.80000000000000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="0Yi-Xo-2rB"/>
-                                                        <constraint firstItem="4Zi-0s-G9J" firstAttribute="leading" secondItem="cYu-99-nTa" secondAttribute="leading" id="YSz-zK-xs3"/>
-                                                        <constraint firstAttribute="trailing" secondItem="4Zi-0s-G9J" secondAttribute="trailing" id="Ypv-df-0Ah"/>
-                                                        <constraint firstItem="4Zi-0s-G9J" firstAttribute="top" secondItem="cYu-99-nTa" secondAttribute="top" id="kA2-MH-IXw"/>
-                                                        <constraint firstAttribute="bottom" secondItem="4Zi-0s-G9J" secondAttribute="bottom" id="mTP-ts-K67"/>
+                                                        <constraint firstItem="8vq-pf-kef" firstAttribute="centerY" secondItem="cYu-99-nTa" secondAttribute="centerY" id="NWA-dP-TEp"/>
+                                                        <constraint firstItem="8vq-pf-kef" firstAttribute="centerX" secondItem="cYu-99-nTa" secondAttribute="centerX" id="q5Y-9H-Uv5"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symptom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW2-gF-wcC">
@@ -96,6 +96,9 @@
                                                         <action selector="addNoteButtonPressed:" destination="60i-WM-AZn" eventType="touchUpInside" id="EaB-kf-QJv"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80M-Ur-dUj">
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="lW2-gF-wcC" firstAttribute="centerY" secondItem="KcQ-cZ-41e" secondAttribute="centerY" id="9Nz-ao-gWY"/>
@@ -104,12 +107,17 @@
                                                 <constraint firstItem="cYu-99-nTa" firstAttribute="top" secondItem="KcQ-cZ-41e" secondAttribute="top" id="Kj3-ir-c9z"/>
                                                 <constraint firstAttribute="bottom" secondItem="cYu-99-nTa" secondAttribute="bottom" id="PqB-v3-8lf"/>
                                                 <constraint firstItem="lW2-gF-wcC" firstAttribute="leading" secondItem="cYu-99-nTa" secondAttribute="trailing" constant="20" id="T2H-Q3-pbI"/>
+                                                <constraint firstItem="80M-Ur-dUj" firstAttribute="width" secondItem="cYu-99-nTa" secondAttribute="width" id="bKB-wI-4b0"/>
                                                 <constraint firstItem="cYu-99-nTa" firstAttribute="leading" secondItem="KcQ-cZ-41e" secondAttribute="leading" id="hBp-h8-Dwm"/>
                                                 <constraint firstItem="ziX-n7-GGu" firstAttribute="centerY" secondItem="KcQ-cZ-41e" secondAttribute="centerY" id="k6n-ff-ItV"/>
+                                                <constraint firstItem="80M-Ur-dUj" firstAttribute="top" secondItem="KcQ-cZ-41e" secondAttribute="top" id="nTJ-Wh-SZC"/>
+                                                <constraint firstItem="80M-Ur-dUj" firstAttribute="height" secondItem="cYu-99-nTa" secondAttribute="height" id="tnu-az-Z4K"/>
+                                                <constraint firstItem="80M-Ur-dUj" firstAttribute="leading" secondItem="KcQ-cZ-41e" secondAttribute="leading" id="uFG-Au-he8"/>
+                                                <constraint firstAttribute="bottom" secondItem="80M-Ur-dUj" secondAttribute="bottom" id="v1v-1D-nVW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="selectedCheck" destination="4Zi-0s-G9J" id="y77-lg-4FD"/>
+                                            <outlet property="selectedCheck" destination="8vq-pf-kef" id="5OB-bb-wod"/>
                                             <outlet property="selectedView" destination="cYu-99-nTa" id="0yZ-NK-lUw"/>
                                             <outlet property="symptomLabel" destination="lW2-gF-wcC" id="nIE-tu-9hO"/>
                                         </connections>
@@ -122,6 +130,9 @@
                                 <state key="normal" title="    SAVE    ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="mHo-BP-B35" eventType="touchUpInside" id="i0k-qj-76u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.34901960784313724" green="0.76470588235294112" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>

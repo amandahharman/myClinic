@@ -8,6 +8,7 @@
 
 import UIKit
 import JTAppleCalendar
+import CoreData
 
 class CalendarViewController: UIViewController {
     
@@ -27,9 +28,10 @@ class CalendarViewController: UIViewController {
     var presentedYear: Int = NSCalendar.current.component(.year, from: Date())
     var presentedDate: Date = Date()
     let formatter = DateFormatter()
-    
-    var eventArray: [CalendarEvent] = []
-    var selectedEvents: [CalendarEvent] = []
+
+    var selectedEvents: [NSManagedObject] = []
+    let loggedSymptoms = [NSManagedObject]()
+
     var selectedDate: Date?
     
     lazy var todayDate : String = {
@@ -59,8 +61,6 @@ class CalendarViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        eventArray.append(CalendarEvent(symptom: Symptom(symptomID: 1, symptomName: "Headache"), description: "Periodically throughout the day", date: "2016 11 13"))
         
     }
     
@@ -117,16 +117,8 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         let cell = cell as! CellView
         
         cell.setupCellBeforeDisplay(cellState: cellState, date: date)
-        if self.eventArray.count > 0 {
-            for event in eventArray {
-                let eventDate = formatter.date(from: event.startDate)
-                if date == eventDate{
-                    cell.eventIndicator.isHidden = false
-                    cell.eventsOnThisDay.append(event)
-                    
-                }
-            }
-        }
+   
+        //Here is where to right code to add events to event on this day of cell
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
@@ -140,7 +132,11 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         if cellState.isSelected {
             cell.dayLabel.textColor = UIColor(hexString: "85CEC4")
         } else {
-            cell.dayLabel.textColor = UIColor.white
+            if cellState.dateBelongsTo == .thisMonth{
+                cell.dayLabel.textColor = UIColor.white
+            } else {
+                cell.dayLabel.textColor = UIColor.lightGray
+            }
         }
     }
     
@@ -150,9 +146,9 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
 
             handleCellSelection(view: cell, cellState: cellState)
         }
-        let cell = cell as! CellView
-        selectedEvents = cell.eventsOnThisDay
-        tableView.reloadData()
+        //let cell = cell as! CellView
+        //selectedEvents = cell.eventsOnThisDay
+        //tableView.reloadData()
 
     }
     
@@ -167,39 +163,47 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalendarTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CalendarEventCell") as! CalendarTableViewCell
-        if selectedEvents.count > 0 {
-            if let appointment = selectedEvents[indexPath.item].appointment {
-                cell.titleLabel.isHidden = false
-                cell.titleLabel.text = "Doctor Appointment"
-                
-                cell.descriptionLabel.isHidden = false
-                cell.descriptionLabel.text = "Memorial Health"
-                
-                cell.timeLabel.isHidden = false
-                cell.timeLabel.text = appointment.scheduledTime.description
-                
-                cell.typeIndicator.isHidden = false
-                cell.typeIndicator.image = UIImage(named: "appointment circle")
-                
-                cell.symptomIcon.isHidden = true
-            }
-            if let symptom = selectedEvents[indexPath.item].symptom{
-                cell.titleLabel.isHidden = false
-                cell.titleLabel.text = symptom.symptomName
-                
-                if let description = selectedEvents[indexPath.item].description{
-                    cell.descriptionLabel.text = description
-                    cell.descriptionLabel.isHidden = false
-                }
-                
-                cell.typeIndicator.isHidden = false
-                cell.typeIndicator.image = UIImage(named: "symptom circle")
-                
-                cell.timeLabel.isHidden = true
-            }
+        
+        if loggedSymptoms.count > 0 {
+            let symptom = loggedSymptoms[indexPath.row]
+            cell.titleLabel.isHidden = false
+            cell.titleLabel.text = symptom.value(forKey: "symptom") as? String
             
             return cell
         }
+//        if selectedEvents.count > 0 {
+//            if let appointment = selectedEvents[indexPath.item].appointment {
+//                cell.titleLabel.isHidden = false
+//                cell.titleLabel.text = "Doctor Appointment"
+//                
+//                cell.descriptionLabel.isHidden = false
+//                cell.descriptionLabel.text = "Memorial Health"
+//                
+//                cell.timeLabel.isHidden = false
+//                cell.timeLabel.text = appointment.scheduledTime.description
+//                
+//                cell.typeIndicator.isHidden = false
+//                cell.typeIndicator.image = UIImage(named: "appointment circle")
+//                
+//                cell.symptomIcon.isHidden = true
+//            }
+//            if let symptom = selectedEvents[indexPath.item].symptom{
+//                cell.titleLabel.isHidden = false
+//                cell.titleLabel.text = symptom.symptomName
+//                
+//                if let description = selectedEvents[indexPath.item].description{
+//                    cell.descriptionLabel.text = description
+//                    cell.descriptionLabel.isHidden = false
+//                }
+//                
+//                cell.typeIndicator.isHidden = false
+//                cell.typeIndicator.image = UIImage(named: "symptom circle")
+//                
+//                cell.timeLabel.isHidden = true
+//            }
+//            
+//            return cell
+//        }
         else {
             cell.titleLabel.isHidden = true
             cell.descriptionLabel.text = "No Events To Show"
@@ -208,6 +212,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
             cell.typeIndicator.isHidden = true
             return cell
         }
+
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -215,7 +220,8 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if selectedEvents.count  > 0 {
-            return selectedEvents.count
+            //later will be selectedEvents.count
+            return loggedSymptoms.count
         }
         return 1
         
