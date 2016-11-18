@@ -46,6 +46,8 @@ class CalendarViewController: UIViewController {
         return f
     }()
 
+    var fetchedResultsController: NSFetchedResultsController<NSManagedObject>?
+    let symptomFetchRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Symptom")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +65,7 @@ class CalendarViewController: UIViewController {
         tableView.delegate = self
         
     }
-    
+
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         self.calendarView.scrollToNextSegment(){
             if self.presentedMonth < 12{

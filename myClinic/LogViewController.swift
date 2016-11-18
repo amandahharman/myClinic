@@ -47,7 +47,7 @@ class LogViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        if let headacheLogged = headacheLogged {ß
+        if let headacheLogged = headacheLogged {
             self.saveSymptom(symptom: headacheLogged)
         }
         if let dizzinessLogged = dizzinessLogged {
