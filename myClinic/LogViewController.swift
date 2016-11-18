@@ -13,7 +13,7 @@ enum SymptomDesc: String {
     case Headache = "Headache", Dizziness = "Dizziness", Fever = "Fever", Nausea = "Nausea", Sleeplessness = "Sleeplessness", Diarrhea = "Diarrhea", Constipation = "Constipation"
 }
 class LogViewController: UIViewController {
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     var loggedSymptoms = [NSManagedObject]()
@@ -34,20 +34,20 @@ class LogViewController: UIViewController {
     
     var fetchedResultsController: NSFetchedResultsController<NSManagedObject>?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        if let headacheLogged = headacheLogged {
+        if let headacheLogged = headacheLogged {ß
             self.saveSymptom(symptom: headacheLogged)
         }
         if let dizzinessLogged = dizzinessLogged {
@@ -75,20 +75,21 @@ class LogViewController: UIViewController {
         let entity =  NSEntityDescription.entity(forEntityName: "Symptom",
                                                  in:managedContext)
         let newSymptom = NSManagedObject(entity: entity!,
-                                     insertInto: managedContext)
+                                         insertInto: managedContext)
         newSymptom.setValue(symptom.name, forKey: "symptom")
         newSymptom.setValue(symptom.description, forKey: "desc")
         newSymptom.setValue(symptom.date, forKey: "date")
-  
+        
         do {
             try managedContext.save()
             loggedSymptoms.append(newSymptom)
+            print("Saved!")
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
-   
-
+    
+    
 }
 
 extension LogViewController: UITableViewDelegate,UITableViewDataSource{
@@ -111,18 +112,19 @@ extension LogViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.cellForRow(at: indexPath) as! LogTableViewCell
         cell.selectedCheck.isHidden = !cell.selectedCheck.isHidden
         cell.selectedView.isHidden = !cell.selectedView.isHidden
-
+        
         if cell.selectedCheck.isHidden == true {
-            if cell.symptomLabel.isEqual(SymptomDesc.Headache.rawValue){
+            if cell.symptomLabel.text!.isEqual(SymptomDesc.Headache.rawValue){
+                headacheLogged = nil
+            }
+
+        }
+        if cell.selectedCheck.isHidden == false {
+            cell.selectedView.backgroundColor = UIColor(hexString: "85cec4")
+            if cell.symptomLabel.text!.isEqual(SymptomDesc.Headache.rawValue){
                 headacheLogged = Symptom(name: SymptomDesc.Headache.rawValue, description: nil, date: Date())
             }
         }
-       if cell.selectedCheck.isHidden == false {
-            cell.selectedView.backgroundColor = UIColor(hexString: "85cec4")
-            if cell.symptomLabel.isEqual(SymptomDesc.Headache.rawValue){
-                headacheLogged = nil
-            }
-        }
-
+        
     }
 }
