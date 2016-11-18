@@ -18,6 +18,7 @@ class LogTableViewCell: UITableViewCell {
     @IBOutlet weak var symptomLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = UITableViewCellSelectionStyle.none
     }
 
 

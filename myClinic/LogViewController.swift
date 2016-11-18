@@ -34,6 +34,7 @@ class LogViewController: UIViewController {
     
     var fetchedResultsController: NSFetchedResultsController<NSManagedObject>?
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -117,6 +118,7 @@ extension LogViewController: UITableViewDelegate,UITableViewDataSource{
             }
         }
        if cell.selectedCheck.isHidden == false {
+            cell.selectedView.backgroundColor = UIColor(hexString: "85cec4")
             if cell.symptomLabel.isEqual(SymptomDesc.Headache.rawValue){
                 headacheLogged = nil
             }
