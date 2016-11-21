@@ -17,7 +17,7 @@ class LogViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var loggedSymptoms = [Symptom]()
-
+    
     
     var symptoms:[String:Bool] = [SymptomDesc.Headache.rawValue:false,
                                   SymptomDesc.Dizziness.rawValue:false,
@@ -27,7 +27,7 @@ class LogViewController: UIViewController {
                                   SymptomDesc.Diarrhea.rawValue:false,
                                   SymptomDesc.Constipation.rawValue:false]
     
-    
+    var symptomSelected: Symptom?
     lazy var managedContext: NSManagedObjectContext = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
@@ -42,6 +42,8 @@ class LogViewController: UIViewController {
     }()
     
     var presentedDate = Date()
+    var newSymptomTime: Date?
+    var newSymptomDesc: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,17 +59,17 @@ class LogViewController: UIViewController {
     
     @IBAction func nextDayButtonPressed(_ sender: UIButton) {
         if let date = Calendar.current.date(byAdding: .day, value: 1, to: presentedDate){
-        presentedDate = date
+            presentedDate = date
             print(presentedDate)
-        dateLabel.text = f.string(from:presentedDate)
+            dateLabel.text = f.string(from:presentedDate)
         }
     }
-
+    
     @IBAction func lastDayButtonPressed(_ sender: UIButton) {
         if let date = Calendar.current.date(byAdding: .day, value: -1, to: presentedDate){
             presentedDate = date
             print(presentedDate)
-
+            
             dateLabel.text = f.string(from:presentedDate)
         }
     }
@@ -82,9 +84,10 @@ class LogViewController: UIViewController {
                 newSymptom.name = symptom
                 f.dateFormat = "yyyy MM dd"
                 newSymptom.date = f.string(from: presentedDate)
+                newSymptom.desc = newSymptomDesc
+                newSymptom.time = newSymptomTime as NSDate?
                 loggedSymptoms.append(newSymptom)
-
-//                newSymptom.setValue(symptom.description, forKey: "desc")
+                
             }
         }
         saveSymptoms()
@@ -98,7 +101,15 @@ class LogViewController: UIViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToSymptomDetail"{
+            let destinationVC = segue.destination as! EditSymptomViewController
+            destinationVC.userCallback = { time, desc in
+                self.newSymptomTime = time
+                self.newSymptomDesc = desc
+            }
+        }
+    }
     
 }
 
@@ -108,7 +119,7 @@ extension LogViewController: UITableViewDelegate,UITableViewDataSource{
         let cell:LogTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SymptomCell") as! LogTableViewCell
         cell.symptomLabel.text = Array(symptoms.keys)[indexPath.item]
         return cell
-
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -129,5 +140,7 @@ extension LogViewController: UITableViewDelegate,UITableViewDataSource{
                 symptoms[symptom] = !isChecked
             }
         }
+        performSegue(withIdentifier: "ToSymptomDetail", sender: nil)
     }
+    
 }

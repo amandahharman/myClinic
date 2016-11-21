@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		40EAC30A50F811EDCB6DD62A /* Pods_myClinic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */; };
+		E05F00341DE3A27E00DB3723 /* EditSymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F00331DE3A27E00DB3723 /* EditSymptomViewController.swift */; };
 		E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECD1DBE585000648B04 /* AppDelegate.swift */; };
 		E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECF1DBE585000648B04 /* LogInViewController.swift */; };
 		E0805ED31DBE585100648B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805ED11DBE585100648B04 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		A72E12C242DC6B9A4860D98B /* Pods-myClinic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myClinic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myClinic/Pods-myClinic.debug.xcconfig"; sourceTree = "<group>"; };
 		AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myClinic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05F00331DE3A27E00DB3723 /* EditSymptomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSymptomViewController.swift; sourceTree = "<group>"; };
 		E0805ECA1DBE585000648B04 /* myClinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myClinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0805ECD1DBE585000648B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0805ECF1DBE585000648B04 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				E0805F011DBE964300648B04 /* Log.storyboard */,
 				E0E24A881DDA9EE60054D962 /* LogViewController.swift */,
+				E05F00331DE3A27E00DB3723 /* EditSymptomViewController.swift */,
 				E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */,
 			);
 			name = Log;
@@ -476,6 +479,7 @@
 				E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */,
 				E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */,
 				E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */,
+				E05F00341DE3A27E00DB3723 /* EditSymptomViewController.swift in Sources */,
 				E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */,
 				E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */,
 				E0E41D161DDAE58600F081A8 /* LogTableViewCell.swift in Sources */,

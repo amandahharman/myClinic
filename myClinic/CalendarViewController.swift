@@ -206,11 +206,21 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
         if let symptom = object as? Symptom{
             cell.titleLabel.isHidden = false
             cell.titleLabel.text = symptom.name
+            if let desc = symptom.desc{
+            cell.descriptionLabel.isHidden = false
+            cell.descriptionLabel.text = desc
+            }
             cell.typeIndicator.isHidden = false
             cell.typeIndicator.image = UIImage(named: "symptom circle")
-            
-            cell.timeLabel.isHidden = true
-            
+            if let time = symptom.time{
+            cell.timeLabel.isHidden = false
+            let timeFormatter = DateFormatter()
+            timeFormatter.timeStyle = .short
+            cell.timeLabel.text = timeFormatter.string(from:time as Date)
+            }
+            print(symptom.time)
+            print(symptom.desc)
+        
         }
         
     }
