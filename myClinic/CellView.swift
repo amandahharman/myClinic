@@ -9,11 +9,11 @@
 import UIKit
 import JTAppleCalendar
 
+
 class CellView: JTAppleDayCellView {
 
     @IBOutlet weak var selectedView: UIView!
     @IBOutlet var dayLabel: UILabel!
-    var eventsOnThisDay = [CalendarEvent]()
     
     @IBOutlet weak var eventIndicator: UIImageView!
 
