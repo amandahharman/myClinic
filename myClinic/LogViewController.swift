@@ -16,16 +16,17 @@ class LogViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
-    var loggedSymptoms = [NSManagedObject]()
-    var headacheLogged: Symptom?
-    var dizzinessLogged: Symptom?
-    var feverLogged: Symptom?
-    var nauseaLogged: Symptom?
-    var sleeplessnessLogged: Symptom?
-    var diarrheaLogged: Symptom?
-    var constipationLogged: Symptom?
+    var loggedSymptoms = [Symptom]()
+
     
-    let symptoms:[String] = [SymptomDesc.Headache.rawValue, SymptomDesc.Dizziness.rawValue, SymptomDesc.Fever.rawValue, SymptomDesc.Nausea.rawValue, SymptomDesc.Sleeplessness.rawValue, SymptomDesc.Diarrhea.rawValue, SymptomDesc.Constipation.rawValue]
+    var symptoms:[String:Bool] = [SymptomDesc.Headache.rawValue:false,
+                                  SymptomDesc.Dizziness.rawValue:false,
+                                  SymptomDesc.Fever.rawValue:false,
+                                  SymptomDesc.Nausea.rawValue:false,
+                                  SymptomDesc.Sleeplessness.rawValue:false,
+                                  SymptomDesc.Diarrhea.rawValue:false,
+                                  SymptomDesc.Constipation.rawValue:false]
+    
     
     lazy var managedContext: NSManagedObjectContext = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -39,6 +40,7 @@ class LogViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        print(NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true))
         
     }
     
@@ -47,42 +49,25 @@ class LogViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        if let headacheLogged = headacheLogged {
-            self.saveSymptom(symptom: headacheLogged)
+        for (symptom, selected) in symptoms {
+            if selected {
+                let entity =  NSEntityDescription.entity(forEntityName: "Symptom",
+                                                         in:managedContext)
+                let newSymptom = Symptom(entity: entity!,
+                                         insertInto: managedContext)
+                newSymptom.name = symptom
+                newSymptom.date = Date() as NSDate?
+                loggedSymptoms.append(newSymptom)
+
+//                newSymptom.setValue(symptom.description, forKey: "desc")
+            }
         }
-        if let dizzinessLogged = dizzinessLogged {
-            self.saveSymptom(symptom: dizzinessLogged)
-        }
-        if let feverLogged = feverLogged {
-            self.saveSymptom(symptom: feverLogged)
-        }
-        if let nauseaLogged = nauseaLogged {
-            self.saveSymptom(symptom: nauseaLogged)
-        }
-        if let sleeplessnessLogged = sleeplessnessLogged {
-            self.saveSymptom(symptom: sleeplessnessLogged)
-        }
-        if let diarrheaLogged = diarrheaLogged {
-            self.saveSymptom(symptom: diarrheaLogged)
-        }
-        if let constipationLogged = constipationLogged {
-            self.saveSymptom(symptom: constipationLogged)
-        }
-        self.tableView.reloadData()
+        saveSymptoms()
     }
     
-    func saveSymptom(symptom: Symptom) {
-        let entity =  NSEntityDescription.entity(forEntityName: "Symptom",
-                                                 in:managedContext)
-        let newSymptom = NSManagedObject(entity: entity!,
-                                         insertInto: managedContext)
-        newSymptom.setValue(symptom.name, forKey: "symptom")
-        newSymptom.setValue(symptom.description, forKey: "desc")
-        newSymptom.setValue(symptom.date, forKey: "date")
-        
+    func saveSymptoms() {
         do {
             try managedContext.save()
-            loggedSymptoms.append(newSymptom)
             print("Saved!")
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
@@ -96,8 +81,9 @@ extension LogViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:LogTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SymptomCell") as! LogTableViewCell
-        cell.symptomLabel.text = symptoms[indexPath.item]
+        cell.symptomLabel.text = Array(symptoms.keys)[indexPath.item]
         return cell
+
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -109,22 +95,14 @@ extension LogViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let cell = tableView.cellForRow(at: indexPath) as! LogTableViewCell
         cell.selectedCheck.isHidden = !cell.selectedCheck.isHidden
         cell.selectedView.isHidden = !cell.selectedView.isHidden
-        
-        if cell.selectedCheck.isHidden == true {
-            if cell.symptomLabel.text!.isEqual(SymptomDesc.Headache.rawValue){
-                headacheLogged = nil
-            }
-
-        }
-        if cell.selectedCheck.isHidden == false {
-            cell.selectedView.backgroundColor = UIColor(hexString: "85cec4")
-            if cell.symptomLabel.text!.isEqual(SymptomDesc.Headache.rawValue){
-                headacheLogged = Symptom(name: SymptomDesc.Headache.rawValue, description: nil, date: Date())
+        if let symptom = cell.symptomLabel.text {
+            if let isChecked = symptoms[symptom] {
+                symptoms[symptom] = !isChecked
             }
         }
-        
     }
 }

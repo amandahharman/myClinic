@@ -31,7 +31,6 @@
 		E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */; };
 		E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A881DDA9EE60054D962 /* LogViewController.swift */; };
 		E0E41D161DDAE58600F081A8 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */; };
-		E0E793881DDF748B0099C70A /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E793871DDF748B0099C70A /* Symptom.swift */; };
 		E0E7938C1DDFC1660099C70A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E793891DDFC1660099C70A /* Alamofire.framework */; };
 		E0E7938D1DDFC1660099C70A /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E7938A1DDFC1660099C70A /* JTAppleCalendar.framework */; };
 		E0E7938E1DDFC1660099C70A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E7938B1DDFC1660099C70A /* SwiftyJSON.framework */; };
@@ -86,7 +85,6 @@
 		E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		E0E24A881DDA9EE60054D962 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
-		E0E793871DDF748B0099C70A /* Symptom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
 		E0E793891DDFC1660099C70A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/myClinic-gwvvyfsxuncxglgejwhtrplfeguu/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		E0E7938A1DDFC1660099C70A /* JTAppleCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JTAppleCalendar.framework; path = "../../../Library/Developer/Xcode/DerivedData/myClinic-gwvvyfsxuncxglgejwhtrplfeguu/Build/Products/Debug-iphoneos/JTAppleCalendar/JTAppleCalendar.framework"; sourceTree = "<group>"; };
 		E0E7938B1DDFC1660099C70A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/myClinic-gwvvyfsxuncxglgejwhtrplfeguu/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */,
-				E0E793871DDF748B0099C70A /* Symptom.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -474,7 +471,6 @@
 				E0E24A831DDA29700054D962 /* Color.swift in Sources */,
 				E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */,
 				E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */,
-				E0E793881DDF748B0099C70A /* Symptom.swift in Sources */,
 				E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */,
 				E0805ED61DBE585100648B04 /* myClinic.xcdatamodeld in Sources */,
 				E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */,
