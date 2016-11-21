@@ -34,7 +34,12 @@ class LogViewController: UIViewController {
     }()
     
     var fetchedResultsController: NSFetchedResultsController<NSManagedObject>?
-    
+    lazy var f : DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy MM dd"
+        
+        return f
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +61,7 @@ class LogViewController: UIViewController {
                 let newSymptom = Symptom(entity: entity!,
                                          insertInto: managedContext)
                 newSymptom.name = symptom
-                newSymptom.date = Date() as NSDate?
+                newSymptom.date = f.string(from: Date())
                 loggedSymptoms.append(newSymptom)
 
 //                newSymptom.setValue(symptom.description, forKey: "desc")

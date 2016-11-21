@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 import CoreData
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var tableView: UITableView!
@@ -68,10 +68,12 @@ class CalendarViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        self.fetchRequest(request: symptomFetchRequest)
-        
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchRequest(request: symptomFetchRequest, date: f.string(from:Date()))
+        tableView.reloadData()
+    }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         self.calendarView.scrollToNextSegment(){
@@ -103,10 +105,10 @@ class CalendarViewController: UIViewController {
         yearLabel.text = String(presentedYear)
     }
     
-    func fetchRequest(request: NSFetchRequest<NSFetchRequestResult>){
+    func fetchRequest(request: NSFetchRequest<NSFetchRequestResult>, date: String){
         let  fetchRequest = request
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.predicate = nil
+        fetchRequest.predicate = NSPredicate(format: "date== %@", date)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
         
         fetchedResultsController = NSFetchedResultsController(
@@ -125,50 +127,6 @@ class CalendarViewController: UIViewController {
             print("Fetch failed")
         }
     }
-    }
-
-extension CalendarViewController:NSFetchedResultsControllerDelegate{
-
-    
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.beginUpdates()
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        switch type {
-        case .insert:
-            tableView.insertRows(at: [newIndexPath!], with: .fade)
-        case .delete:
-            self.tableView.deleteRows(at: [indexPath! as IndexPath], with: .fade)
-        case .update:
-            
-            guard let indexPath = indexPath ,let cell = tableView.cellForRow(at: indexPath) else {return}
-            
-            configureCell(cell: cell as! CalendarTableViewCell, object: controller.object(at: indexPath) as! NSManagedObject)
-            
-            tableView.reloadRows(at: [indexPath], with: .fade)
-            
-            
-        case .move:
-            tableView.deleteRows(at: [indexPath!], with: UITableViewRowAnimation.fade)
-            tableView.insertRows(at: [newIndexPath!], with: UITableViewRowAnimation.fade)
-        }
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-        switch type {
-        case .insert:
-            tableView.insertSections(NSIndexSet(index:sectionIndex) as IndexSet, with: .fade)
-        case .delete:
-            tableView.deleteSections(NSIndexSet(index:sectionIndex) as IndexSet, with: .fade)
-        default:
-            break
-        }
-    }
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.endUpdates()
-    }
-    
 }
 
 extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate{
@@ -190,18 +148,19 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         let cell = cell as! CellView
         
         cell.setupCellBeforeDisplay(cellState: cellState, date: date)
-        
-        //Here is where to right code to add events to event on this day of cell
+        fetchRequest(request: symptomFetchRequest, date: f.string(from: date))
+        showEventIndicator(view: cell)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         calendar.reloadData()
         
     }
-    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
+    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState, date: Date) {
         guard let cell = view as? CellView  else {
             return
         }
+        if !formatter.string(from: date).isEqual(todayDate) {
         if cellState.isSelected {
             cell.dayLabel.textColor = UIColor(hexString: "85CEC4")
         } else {
@@ -211,22 +170,32 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
                 cell.dayLabel.textColor = UIColor.lightGray
             }
         }
+        }
+
+    }
+    func showEventIndicator(view:JTAppleDayCellView?){
+        guard let cell = view as? CellView  else {
+            return
+        }
+        if let numObject = fetchedResultsController?.fetchedObjects {
+            if numObject.count > 0{
+                cell.eventIndicator.isHidden = false
+            }
+            else {
+                cell.eventIndicator.isHidden = true
+            }
+        }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         print("Cell selected at \(date)")
-        if !formatter.string(from: date).isEqual(todayDate) {
-            
-            handleCellSelection(view: cell, cellState: cellState)
-        }
-        //let cell = cell as! CellView
-        //selectedEvents = cell.eventsOnThisDay
-        //tableView.reloadData()
-        
+        fetchRequest(request: symptomFetchRequest, date: f.string(from: date))
+        handleCellSelection(view: cell, cellState: cellState, date: date)
+        tableView.reloadData()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, date: date)
     }
     
     
@@ -238,7 +207,6 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
         if let symptom = object as? Symptom{
             cell.titleLabel.isHidden = false
             cell.titleLabel.text = symptom.name
-            
             cell.typeIndicator.isHidden = false
             cell.typeIndicator.image = UIImage(named: "symptom circle")
             
@@ -250,65 +218,31 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalendarTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CalendarEventCell") as! CalendarTableViewCell
-        if let object = fetchedResultsController?.object(at: indexPath) {
-            configureCell(cell: cell, object: object)
-            return cell
-        }
- 
-        else {
-            cell.titleLabel.isHidden = true
-            cell.descriptionLabel.text = "No Events To Show"
-            cell.timeLabel.isHidden = true
-            cell.symptomIcon.isHidden = true
-            cell.typeIndicator.isHidden = true
-            return cell
-        }
+        if let frc = fetchedResultsController, let count =  frc.fetchedObjects?.count{
+            if count > 0{
+                let object = frc.object(at: indexPath)
+                configureCell(cell: cell, object: object)
+                return cell
+            }
 
-    }
-            //        if selectedEvents.count > 0 {
-            //            if let appointment = selectedEvents[indexPath.item].appointment {
-            //                cell.titleLabel.isHidden = false
-            //                cell.titleLabel.text = "Doctor Appointment"
-            //
-            //                cell.descriptionLabel.isHidden = false
-            //                cell.descriptionLabel.text = "Memorial Health"
-            //
-            //                cell.timeLabel.isHidden = false
-            //                cell.timeLabel.text = appointment.scheduledTime.description
-            //
-            //                cell.typeIndicator.isHidden = false
-            //                cell.typeIndicator.image = UIImage(named: "appointment circle")
-            //
-            //                cell.symptomIcon.isHidden = true
-            //            }
-            //            if let symptom = selectedEvents[indexPath.item].symptom{
-            //                cell.titleLabel.isHidden = false
-            //                cell.titleLabel.text = symptom.symptomName
-            //
-            //                if let description = selectedEvents[indexPath.item].description{
-            //                    cell.descriptionLabel.text = description
-            //                    cell.descriptionLabel.isHidden = false
-            //                }
-            //
-            //                cell.typeIndicator.isHidden = false
-            //                cell.typeIndicator.image = UIImage(named: "symptom circle")
-            //
-            //                cell.timeLabel.isHidden = true
-            //            }
-            //
-            //            return cell
-            //        }
-
+        }
+        cell.titleLabel.isHidden = true
+        cell.descriptionLabel.isHidden = false
+        cell.descriptionLabel.text = "No Events To Show"
+        cell.timeLabel.isHidden = true
+        cell.symptomIcon.isHidden = true
+        cell.typeIndicator.isHidden = true
+        return cell
         
-
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultsController?.sections?.count ?? 0
+        return fetchedResultsController?.sections?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController?.sections else {
-            return 0
+            return 1
         }
         let sectionInfo = sections[section]
         return sectionInfo.numberOfObjects
