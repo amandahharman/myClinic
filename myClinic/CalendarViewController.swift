@@ -71,8 +71,7 @@ class CalendarViewController: UIViewController, NSFetchedResultsControllerDelega
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchRequest(request: symptomFetchRequest, date: f.string(from:Date()))
-        tableView.reloadData()
+        calendarView.reloadData()
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {

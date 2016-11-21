@@ -34,6 +34,9 @@
                                         <state key="normal" title="&lt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="lastDayButtonPressed:" destination="mHo-BP-B35" eventType="touchUpInside" id="Rba-K3-p9Z"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 OCTOBER 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-1d-t5C">
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
@@ -44,6 +47,9 @@
                                         <state key="normal" title="&gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nextDayButtonPressed:" destination="mHo-BP-B35" eventType="touchUpInside" id="u6h-GO-kHd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -151,6 +157,7 @@
                     <navigationItem key="navigationItem" id="Ok3-6b-LiP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dateLabel" destination="5UA-1d-t5C" id="qcj-4A-fpn"/>
                         <outlet property="tableView" destination="v6v-YC-vrO" id="agt-DP-3cl"/>
                     </connections>
                 </viewController>

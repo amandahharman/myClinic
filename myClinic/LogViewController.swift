@@ -14,7 +14,7 @@ enum SymptomDesc: String {
 }
 class LogViewController: UIViewController {
     
-    
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var loggedSymptoms = [Symptom]()
 
@@ -36,21 +36,40 @@ class LogViewController: UIViewController {
     var fetchedResultsController: NSFetchedResultsController<NSManagedObject>?
     lazy var f : DateFormatter = {
         let f = DateFormatter()
-        f.dateFormat = "yyyy MM dd"
+        f.dateStyle = .medium
         
         return f
     }()
+    
+    var presentedDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         print(NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true))
-        
+        dateLabel.text = f.string(from:presentedDate)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func nextDayButtonPressed(_ sender: UIButton) {
+        if let date = Calendar.current.date(byAdding: .day, value: 1, to: presentedDate){
+        presentedDate = date
+            print(presentedDate)
+        dateLabel.text = f.string(from:presentedDate)
+        }
+    }
+
+    @IBAction func lastDayButtonPressed(_ sender: UIButton) {
+        if let date = Calendar.current.date(byAdding: .day, value: -1, to: presentedDate){
+            presentedDate = date
+            print(presentedDate)
+
+            dateLabel.text = f.string(from:presentedDate)
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -61,7 +80,8 @@ class LogViewController: UIViewController {
                 let newSymptom = Symptom(entity: entity!,
                                          insertInto: managedContext)
                 newSymptom.name = symptom
-                newSymptom.date = f.string(from: Date())
+                f.dateFormat = "yyyy MM dd"
+                newSymptom.date = f.string(from: presentedDate)
                 loggedSymptoms.append(newSymptom)
 
 //                newSymptom.setValue(symptom.description, forKey: "desc")
