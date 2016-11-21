@@ -91,30 +91,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziX-n7-GGu">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="TgA-4K-qiV"/>
-                                                        <constraint firstAttribute="height" constant="30" id="i2U-Wz-57T"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <state key="normal" title="+">
-                                                        <color key="titleColor" red="0.44369054879999997" green="0.80174794819999995" blue="0.71138599489999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="addNoteButtonPressed:" destination="60i-WM-AZn" eventType="touchUpInside" id="EaB-kf-QJv"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="lW2-gF-wcC" firstAttribute="centerY" secondItem="KcQ-cZ-41e" secondAttribute="centerY" id="9Nz-ao-gWY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ziX-n7-GGu" secondAttribute="trailing" constant="25" id="BCj-q0-kxU"/>
-                                                <constraint firstItem="ziX-n7-GGu" firstAttribute="leading" secondItem="lW2-gF-wcC" secondAttribute="trailing" constant="8" id="EZY-7J-Pvo"/>
                                                 <constraint firstItem="cYu-99-nTa" firstAttribute="top" secondItem="KcQ-cZ-41e" secondAttribute="top" id="Kj3-ir-c9z"/>
                                                 <constraint firstAttribute="bottom" secondItem="cYu-99-nTa" secondAttribute="bottom" id="PqB-v3-8lf"/>
                                                 <constraint firstItem="lW2-gF-wcC" firstAttribute="leading" secondItem="cYu-99-nTa" secondAttribute="trailing" constant="20" id="T2H-Q3-pbI"/>
                                                 <constraint firstItem="80M-Ur-dUj" firstAttribute="width" secondItem="cYu-99-nTa" secondAttribute="width" id="bKB-wI-4b0"/>
                                                 <constraint firstItem="cYu-99-nTa" firstAttribute="leading" secondItem="KcQ-cZ-41e" secondAttribute="leading" id="hBp-h8-Dwm"/>
-                                                <constraint firstItem="ziX-n7-GGu" firstAttribute="centerY" secondItem="KcQ-cZ-41e" secondAttribute="centerY" id="k6n-ff-ItV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lW2-gF-wcC" secondAttribute="trailing" constant="8" id="mqu-Jc-8Fe"/>
                                                 <constraint firstItem="80M-Ur-dUj" firstAttribute="top" secondItem="KcQ-cZ-41e" secondAttribute="top" id="nTJ-Wh-SZC"/>
                                                 <constraint firstItem="80M-Ur-dUj" firstAttribute="height" secondItem="cYu-99-nTa" secondAttribute="height" id="tnu-az-Z4K"/>
                                                 <constraint firstItem="80M-Ur-dUj" firstAttribute="leading" secondItem="KcQ-cZ-41e" secondAttribute="leading" id="uFG-Au-he8"/>
@@ -159,11 +144,101 @@
                     <connections>
                         <outlet property="dateLabel" destination="5UA-1d-t5C" id="qcj-4A-fpn"/>
                         <outlet property="tableView" destination="v6v-YC-vrO" id="agt-DP-3cl"/>
+                        <segue destination="PaC-fD-mST" kind="popoverPresentation" identifier="ToSymptomDetail" popoverAnchorView="gkz-pO-9W7" id="mQN-o7-Urq">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScK-3u-5wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="668" y="961.16941529235385"/>
+        </scene>
+        <!--Edit Symptom View Controller-->
+        <scene sceneID="TF0-kU-eUr">
+            <objects>
+                <viewController id="PaC-fD-mST" customClass="EditSymptomViewController" customModule="myClinic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hwh-hL-oUW"/>
+                        <viewControllerLayoutGuide type="bottom" id="6St-CD-8oO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="27K-V1-bAw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxi-bV-3hP">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnq-8B-gba">
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.80784313730000001" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="  CANCEL  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="PaC-fD-mST" eventType="touchUpInside" id="Tnf-xl-YBP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgh-eY-mfM">
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.80784313730000001" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="c5z-0F-jqN"/>
+                                </constraints>
+                                <state key="normal" image="done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="PaC-fD-mST" eventType="touchUpInside" id="SvY-Co-40W"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hg-M7-Bie">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="vVD-hD-WmF"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sbf-KS-Atw">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="Xzb-Cy-QGe"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="501456857.24669802">
+                                    <!--2016-11-21 21:34:17 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="timeChanged:" destination="PaC-fD-mST" eventType="valueChanged" id="JXD-NB-uZN"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34901960780000002" green="0.76470588240000004" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nxi-bV-3hP" firstAttribute="top" secondItem="hwh-hL-oUW" secondAttribute="bottom" constant="37" id="4Tc-KF-5t6"/>
+                            <constraint firstItem="sbf-KS-Atw" firstAttribute="top" secondItem="9hg-M7-Bie" secondAttribute="bottom" constant="15" id="M3Z-Om-Z1w"/>
+                            <constraint firstAttribute="trailing" secondItem="9hg-M7-Bie" secondAttribute="trailing" id="Ncr-Wp-qfH"/>
+                            <constraint firstItem="9hg-M7-Bie" firstAttribute="top" secondItem="dnq-8B-gba" secondAttribute="bottom" constant="24" id="Rnk-dg-4pq"/>
+                            <constraint firstItem="9hg-M7-Bie" firstAttribute="leading" secondItem="27K-V1-bAw" secondAttribute="leading" id="Urw-hu-Mmv"/>
+                            <constraint firstItem="9hg-M7-Bie" firstAttribute="top" secondItem="hwh-hL-oUW" secondAttribute="bottom" constant="171" id="ce1-e2-ken"/>
+                            <constraint firstItem="dnq-8B-gba" firstAttribute="centerX" secondItem="27K-V1-bAw" secondAttribute="centerX" id="gB0-cp-g6K"/>
+                            <constraint firstItem="dnq-8B-gba" firstAttribute="top" secondItem="Nxi-bV-3hP" secondAttribute="bottom" priority="997" constant="44" id="kBg-PB-uaT"/>
+                            <constraint firstAttribute="trailing" secondItem="Hgh-eY-mfM" secondAttribute="trailing" id="n9G-Ga-mQ3"/>
+                            <constraint firstItem="sbf-KS-Atw" firstAttribute="leading" secondItem="27K-V1-bAw" secondAttribute="leading" id="q6h-LD-Vi5"/>
+                            <constraint firstItem="Hgh-eY-mfM" firstAttribute="top" secondItem="sbf-KS-Atw" secondAttribute="bottom" constant="42" id="vB3-cI-Um0"/>
+                            <constraint firstAttribute="trailing" secondItem="sbf-KS-Atw" secondAttribute="trailing" id="vsT-Gh-L4V"/>
+                            <constraint firstItem="Nxi-bV-3hP" firstAttribute="centerX" secondItem="27K-V1-bAw" secondAttribute="centerX" id="z0U-Dc-6Wx"/>
+                            <constraint firstItem="Hgh-eY-mfM" firstAttribute="leading" secondItem="27K-V1-bAw" secondAttribute="leading" id="zs8-rt-Ord"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noteField" destination="9hg-M7-Bie" id="NFp-wx-teG"/>
+                        <outlet property="timePicker" destination="sbf-KS-Atw" id="SWf-nA-pzN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IHE-lz-f0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1382" y="961"/>
         </scene>
     </scenes>
     <resources>
