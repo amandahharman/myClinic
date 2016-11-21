@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 import CoreData
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var tableView: UITableView!
@@ -28,10 +28,10 @@ class CalendarViewController: UIViewController {
     var presentedYear: Int = NSCalendar.current.component(.year, from: Date())
     var presentedDate: Date = Date()
     let formatter = DateFormatter()
-
+    
     var selectedEvents: [NSManagedObject] = []
     let loggedSymptoms = [NSManagedObject]()
-
+    
     var selectedDate: Date?
     
     lazy var todayDate : String = {
@@ -45,7 +45,12 @@ class CalendarViewController: UIViewController {
         
         return f
     }()
-
+    
+    lazy var managedContext: NSManagedObjectContext = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }()
+    
     var fetchedResultsController: NSFetchedResultsController<NSManagedObject>?
     let symptomFetchRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Symptom")
     
@@ -63,9 +68,12 @@ class CalendarViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        calendarView.reloadData()
+    }
+    
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         self.calendarView.scrollToNextSegment(){
             if self.presentedMonth < 12{
@@ -96,9 +104,29 @@ class CalendarViewController: UIViewController {
         yearLabel.text = String(presentedYear)
     }
     
+    func fetchRequest(request: NSFetchRequest<NSFetchRequestResult>, date: String){
+        let  fetchRequest = request
+        let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.predicate = NSPredicate(format: "date== %@", date)
+        fetchRequest.sortDescriptors = [primarySortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: request as! NSFetchRequest<NSManagedObject>,
+            managedObjectContext: self.managedContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        fetchedResultsController?.delegate = self
+        
+        do{
+            try
+                fetchedResultsController?.performFetch()
+            print("Fetch succeeded")
+        }
+        catch{
+            print("Fetch failed")
+        }
+    }
 }
-
-
 
 extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate{
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
@@ -119,18 +147,19 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         let cell = cell as! CellView
         
         cell.setupCellBeforeDisplay(cellState: cellState, date: date)
-   
-        //Here is where to right code to add events to event on this day of cell
+        fetchRequest(request: symptomFetchRequest, date: f.string(from: date))
+        showEventIndicator(view: cell)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         calendar.reloadData()
-
+        
     }
-    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
+    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState, date: Date) {
         guard let cell = view as? CellView  else {
             return
         }
+        if !formatter.string(from: date).isEqual(todayDate) {
         if cellState.isSelected {
             cell.dayLabel.textColor = UIColor(hexString: "85CEC4")
         } else {
@@ -140,92 +169,82 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
                 cell.dayLabel.textColor = UIColor.lightGray
             }
         }
+        }
+
+    }
+    func showEventIndicator(view:JTAppleDayCellView?){
+        guard let cell = view as? CellView  else {
+            return
+        }
+        if let numObject = fetchedResultsController?.fetchedObjects {
+            if numObject.count > 0{
+                cell.eventIndicator.isHidden = false
+            }
+            else {
+                cell.eventIndicator.isHidden = true
+            }
+        }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         print("Cell selected at \(date)")
-        if !formatter.string(from: date).isEqual(todayDate) {
-
-            handleCellSelection(view: cell, cellState: cellState)
-        }
-        //let cell = cell as! CellView
-        //selectedEvents = cell.eventsOnThisDay
-        //tableView.reloadData()
-
+        fetchRequest(request: symptomFetchRequest, date: f.string(from: date))
+        handleCellSelection(view: cell, cellState: cellState, date: date)
+        tableView.reloadData()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, date: date)
     }
-  
+    
     
 }
 
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
     
+    func configureCell(cell: CalendarTableViewCell, object: NSManagedObject){
+        if let symptom = object as? Symptom{
+            cell.titleLabel.isHidden = false
+            cell.titleLabel.text = symptom.name
+            cell.typeIndicator.isHidden = false
+            cell.typeIndicator.image = UIImage(named: "symptom circle")
+            
+            cell.timeLabel.isHidden = true
+            
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalendarTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CalendarEventCell") as! CalendarTableViewCell
-        
-        if loggedSymptoms.count > 0 {
-            let symptom = loggedSymptoms[indexPath.row]
-            cell.titleLabel.isHidden = false
-            cell.titleLabel.text = symptom.value(forKey: "symptom") as? String
-            
-            return cell
-        }
-//        if selectedEvents.count > 0 {
-//            if let appointment = selectedEvents[indexPath.item].appointment {
-//                cell.titleLabel.isHidden = false
-//                cell.titleLabel.text = "Doctor Appointment"
-//                
-//                cell.descriptionLabel.isHidden = false
-//                cell.descriptionLabel.text = "Memorial Health"
-//                
-//                cell.timeLabel.isHidden = false
-//                cell.timeLabel.text = appointment.scheduledTime.description
-//                
-//                cell.typeIndicator.isHidden = false
-//                cell.typeIndicator.image = UIImage(named: "appointment circle")
-//                
-//                cell.symptomIcon.isHidden = true
-//            }
-//            if let symptom = selectedEvents[indexPath.item].symptom{
-//                cell.titleLabel.isHidden = false
-//                cell.titleLabel.text = symptom.symptomName
-//                
-//                if let description = selectedEvents[indexPath.item].description{
-//                    cell.descriptionLabel.text = description
-//                    cell.descriptionLabel.isHidden = false
-//                }
-//                
-//                cell.typeIndicator.isHidden = false
-//                cell.typeIndicator.image = UIImage(named: "symptom circle")
-//                
-//                cell.timeLabel.isHidden = true
-//            }
-//            
-//            return cell
-//        }
-        else {
-            cell.titleLabel.isHidden = true
-            cell.descriptionLabel.text = "No Events To Show"
-            cell.timeLabel.isHidden = true
-            cell.symptomIcon.isHidden = true
-            cell.typeIndicator.isHidden = true
-            return cell
-        }
+        if let frc = fetchedResultsController, let count =  frc.fetchedObjects?.count{
+            if count > 0{
+                let object = frc.object(at: indexPath)
+                configureCell(cell: cell, object: object)
+                return cell
+            }
 
+        }
+        cell.titleLabel.isHidden = true
+        cell.descriptionLabel.isHidden = false
+        cell.descriptionLabel.text = "No Events To Show"
+        cell.timeLabel.isHidden = true
+        cell.symptomIcon.isHidden = true
+        cell.typeIndicator.isHidden = true
+        return cell
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return fetchedResultsController?.sections?.count ?? 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if selectedEvents.count  > 0 {
-            //later will be selectedEvents.count
-            return loggedSymptoms.count
+        guard let sections = fetchedResultsController?.sections else {
+            return 1
         }
-        return 1
+        let sectionInfo = sections[section]
+        return sectionInfo.numberOfObjects
         
     }
 }

@@ -29,7 +29,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="vPH-x6-k18" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ea3-0u-KEV"/>
-                <constraint firstItem="c5Z-AD-us1" firstAttribute="top" secondItem="vPH-x6-k18" secondAttribute="bottom" constant="10" id="MT6-f8-Ju6"/>
+                <constraint firstItem="c5Z-AD-us1" firstAttribute="top" secondItem="vPH-x6-k18" secondAttribute="bottom" constant="5" id="MT6-f8-Ju6"/>
                 <constraint firstItem="Eio-xg-EgM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RDT-FC-hOR"/>
                 <constraint firstItem="Eio-xg-EgM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="S8T-FQ-f7t"/>
                 <constraint firstAttribute="trailing" secondItem="Eio-xg-EgM" secondAttribute="trailing" id="k0a-lK-ZwE"/>
