@@ -20,9 +20,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="8SW-K0-cAi" kind="relationship" relationship="viewControllers" id="oy2-Fg-E0j"/>
+                        <segue destination="zYH-GL-rjg" kind="relationship" relationship="viewControllers" id="CEw-G4-U41"/>
                         <segue destination="3Wy-YP-lVc" kind="relationship" relationship="viewControllers" id="6nI-6W-7Bx"/>
-                        <segue destination="82U-cU-aCg" kind="relationship" relationship="viewControllers" id="Juf-hV-hPC"/>
-                        <segue destination="dSU-eK-EXN" kind="relationship" relationship="viewControllers" id="17o-fN-ATT"/>
+                        <segue destination="uSq-z3-VLU" kind="relationship" relationship="viewControllers" id="Juf-hV-hPC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDz-MX-VOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,6 +159,16 @@
             </objects>
             <point key="canvasLocation" x="-650.39999999999998" y="123.68815592203899"/>
         </scene>
+        <!--UserInfo-->
+        <scene sceneID="H1r-zF-Lra">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="userInfo" storyboardName="UserInfo" id="zYH-GL-rjg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="contacts" id="G5Z-H6-jAu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ymb-o9-yaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="541"/>
+        </scene>
         <!--Calendar-->
         <scene sceneID="1n4-jy-u6x">
             <objects>
@@ -180,30 +190,93 @@
             <point key="canvasLocation" x="47" y="604"/>
         </scene>
         <!--Medications-->
-        <scene sceneID="t9M-4G-QJd">
+        <scene sceneID="0QH-2s-lai">
             <objects>
-                <viewControllerPlaceholder storyboardName="Medications" id="82U-cU-aCg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="DhQ-XE-uAC"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rmw-kb-KTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Medications" id="uSq-z3-VLU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4zU-qe-7hl"/>
+                        <viewControllerLayoutGuide type="bottom" id="LN7-lF-3RQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Bz-1Y-i8G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4q2-e2-ZP9">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PB5-aa-All">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="427" id="vRN-od-6MO"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicationCell" rowHeight="61" id="8Dz-vS-fRD">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Dz-vS-fRD" id="nvf-lM-Ccc">
+                                            <frame key="frameInset" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u32-Ov-dm6">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="No Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oII-QT-cYT">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="u32-Ov-dm6" firstAttribute="centerY" secondItem="nvf-lM-Ccc" secondAttribute="centerY" id="5vJ-Wp-PQk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oII-QT-cYT" secondAttribute="trailing" constant="8" id="C5N-MS-KG8"/>
+                                                <constraint firstItem="u32-Ov-dm6" firstAttribute="leading" secondItem="nvf-lM-Ccc" secondAttribute="leadingMargin" constant="8" id="N0d-k5-z75"/>
+                                                <constraint firstItem="oII-QT-cYT" firstAttribute="leading" secondItem="u32-Ov-dm6" secondAttribute="trailing" constant="8" id="cFj-mA-iWQ"/>
+                                                <constraint firstItem="oII-QT-cYT" firstAttribute="centerY" secondItem="nvf-lM-Ccc" secondAttribute="centerY" id="tbu-2n-mbh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88o-FH-JpG">
+                                <color key="backgroundColor" red="0.4431372549" green="0.80000000000000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.67450980390000004" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PB5-aa-All" firstAttribute="leading" secondItem="8Bz-1Y-i8G" secondAttribute="leading" id="Kt2-Lc-K7v"/>
+                            <constraint firstItem="4q2-e2-ZP9" firstAttribute="top" secondItem="4zU-qe-7hl" secondAttribute="bottom" constant="20" id="Q1g-XU-rBZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="88o-FH-JpG" secondAttribute="trailing" constant="8" id="e2L-cT-iEw"/>
+                            <constraint firstAttribute="trailing" secondItem="PB5-aa-All" secondAttribute="trailing" id="jwD-HW-nag"/>
+                            <constraint firstItem="PB5-aa-All" firstAttribute="top" secondItem="88o-FH-JpG" secondAttribute="bottom" constant="8" id="nU8-UP-6BD"/>
+                            <constraint firstItem="LN7-lF-3RQ" firstAttribute="top" secondItem="PB5-aa-All" secondAttribute="bottom" id="v9r-hZ-nvy"/>
+                            <constraint firstItem="4q2-e2-ZP9" firstAttribute="centerX" secondItem="8Bz-1Y-i8G" secondAttribute="centerX" id="yEX-Fe-9LJ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="timer" id="nhu-CD-2jr"/>
+                    <navigationItem key="navigationItem" id="4gp-1n-z1y">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zxu-V6-dq8"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kTo-ei-SdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="342" y="1000"/>
-        </scene>
-        <!--UserInfo-->
-        <scene sceneID="o8G-ba-fhQ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="UserInfo" id="dSU-eK-EXN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wQ4-Za-oCB"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1go-dx-X7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="831" y="573"/>
         </scene>
     </scenes>
     <resources>
         <image name="Divider Line" width="338" height="1"/>
         <image name="Heart With Pulse-100" width="100" height="100"/>
+        <image name="contacts" width="96" height="96"/>
         <image name="password" width="40" height="44"/>
+        <image name="timer" width="22" height="22"/>
         <image name="username" width="40" height="39"/>
     </resources>
 </document>
