@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DCR-8M-812">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Appointments-->
+        <scene sceneID="Edj-dG-ELD">
+            <objects>
+                <viewController title="Appointments" id="DCR-8M-812" customClass="AppointmentsViewController" customModule="myClinic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ofH-zV-qya"/>
+                        <viewControllerLayoutGuide type="bottom" id="06e-mC-LcZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cns-aP-t88">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appointments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nT-p0-Pf5">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hO0-OP-vVB">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="427" id="SiD-Zz-yVa"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppointmentsCell" rowHeight="72" id="0kd-1g-iFA" customClass="AppointmentsTableViewCell" customModule="myClinic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0kd-1g-iFA" id="HlL-ty-xeW">
+                                            <frame key="frameInset" width="375" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gbK-u4-Mcw">
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trz-2E-vD4">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5E-9O-vvh">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-ox-G6r">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gbK-u4-Mcw" secondAttribute="trailing" constant="8" id="HW6-Yo-wVc"/>
+                                                <constraint firstItem="gbK-u4-Mcw" firstAttribute="leading" secondItem="HlL-ty-xeW" secondAttribute="leadingMargin" constant="8" id="KQU-AT-CzV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="J5c-ox-G6r" secondAttribute="trailing" constant="8" id="Ua0-7x-NUl"/>
+                                                <constraint firstItem="gbK-u4-Mcw" firstAttribute="top" secondItem="HlL-ty-xeW" secondAttribute="topMargin" id="Y7e-iI-Ou3"/>
+                                                <constraint firstItem="J5c-ox-G6r" firstAttribute="leading" secondItem="HlL-ty-xeW" secondAttribute="leadingMargin" constant="8" id="eTK-xc-EIk"/>
+                                                <constraint firstItem="J5c-ox-G6r" firstAttribute="top" secondItem="gbK-u4-Mcw" secondAttribute="bottom" constant="8" id="fe2-dE-OTi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Trz-2E-vD4" id="aCC-Fu-Fb2"/>
+                                            <outlet property="locationLabel" destination="J5c-ox-G6r" id="EYi-sH-XjN"/>
+                                            <outlet property="timeLabel" destination="w5E-9O-vvh" id="Rid-Ma-kcd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlA-Fx-cTn">
+                                <color key="backgroundColor" red="0.4431372549" green="0.80000000000000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="DCR-8M-812" eventType="touchUpInside" id="60L-LO-KOY"/>
+                                    <segue destination="Z6b-ra-Uuf" kind="show" identifier="toAddAppointment" id="bNV-KH-xZX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.67450980390000004" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2nT-p0-Pf5" firstAttribute="centerX" secondItem="cns-aP-t88" secondAttribute="centerX" id="0eZ-Tb-A2E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XlA-Fx-cTn" secondAttribute="trailing" constant="8" id="7oQ-Io-S1e"/>
+                            <constraint firstItem="06e-mC-LcZ" firstAttribute="top" secondItem="hO0-OP-vVB" secondAttribute="bottom" id="BZa-IS-CsC"/>
+                            <constraint firstItem="hO0-OP-vVB" firstAttribute="leading" secondItem="cns-aP-t88" secondAttribute="leading" id="Rjh-sa-R4g"/>
+                            <constraint firstItem="2nT-p0-Pf5" firstAttribute="top" secondItem="ofH-zV-qya" secondAttribute="bottom" constant="20" id="c2i-2C-78s"/>
+                            <constraint firstItem="hO0-OP-vVB" firstAttribute="top" secondItem="XlA-Fx-cTn" secondAttribute="bottom" constant="8" id="fIu-Gh-kf8"/>
+                            <constraint firstAttribute="trailing" secondItem="hO0-OP-vVB" secondAttribute="trailing" id="qjv-1a-QNy"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="timer" id="NQS-aR-vIe"/>
+                    <navigationItem key="navigationItem" id="tgk-1a-PjW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WtO-jl-U5z"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="hO0-OP-vVB" id="Xwl-Ua-osX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ur7-Qw-RHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341.60000000000002" y="999.85007496251887"/>
+        </scene>
+        <!--Add Appointment View Controller-->
+        <scene sceneID="NKG-lc-3fh">
+            <objects>
+                <viewController id="Z6b-ra-Uuf" customClass="AddAppointmentViewController" customModule="myClinic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H6e-wk-L9g"/>
+                        <viewControllerLayoutGuide type="bottom" id="eqW-TF-fI4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eqB-wd-9mI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nri-bX-yvx">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <date key="date" timeIntervalSinceReferenceDate="501799577.59258699">
+                                    <!--2016-11-25 20:46:17 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="pickerChanged:" destination="Z6b-ra-Uuf" eventType="valueChanged" id="NAm-wK-Ncz"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Appointment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlH-Sf-Yhn">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPU-Ln-zMc">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hmD-Y6-03Z"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umA-Fb-GHU">
+                                <color key="backgroundColor" red="0.52156862745098043" green="0.80784313725490198" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="  CANCEL  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="Z6b-ra-Uuf" eventType="touchUpInside" id="HBt-jT-AsB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEI-KD-bsx">
+                                <color key="backgroundColor" red="0.52156862745098043" green="0.80784313725490198" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="4mJ-EV-c3L"/>
+                                </constraints>
+                                <state key="normal" image="done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="Z6b-ra-Uuf" eventType="touchUpInside" id="ybJ-b4-iMx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.67450980392156867" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TlH-Sf-Yhn" firstAttribute="top" secondItem="H6e-wk-L9g" secondAttribute="bottom" constant="20" id="0ED-te-04h"/>
+                            <constraint firstItem="VEI-KD-bsx" firstAttribute="top" secondItem="nri-bX-yvx" secondAttribute="bottom" constant="25" id="2W8-7b-2eB"/>
+                            <constraint firstItem="nri-bX-yvx" firstAttribute="leading" secondItem="eqB-wd-9mI" secondAttribute="leading" id="7ga-Ro-MzE"/>
+                            <constraint firstItem="TlH-Sf-Yhn" firstAttribute="centerX" secondItem="eqB-wd-9mI" secondAttribute="centerX" id="CFb-Lw-cwA"/>
+                            <constraint firstItem="nri-bX-yvx" firstAttribute="top" secondItem="dPU-Ln-zMc" secondAttribute="bottom" constant="25" id="Dd5-CR-Lvi"/>
+                            <constraint firstItem="dPU-Ln-zMc" firstAttribute="leading" secondItem="eqB-wd-9mI" secondAttribute="leading" id="IG1-E7-3OY"/>
+                            <constraint firstAttribute="trailing" secondItem="dPU-Ln-zMc" secondAttribute="trailing" id="W2y-pC-MSM"/>
+                            <constraint firstItem="umA-Fb-GHU" firstAttribute="top" secondItem="TlH-Sf-Yhn" secondAttribute="bottom" priority="997" constant="55" id="car-5Y-2WZ"/>
+                            <constraint firstItem="VEI-KD-bsx" firstAttribute="leading" secondItem="eqB-wd-9mI" secondAttribute="leading" id="geQ-YQ-Wzw"/>
+                            <constraint firstItem="umA-Fb-GHU" firstAttribute="centerX" secondItem="eqB-wd-9mI" secondAttribute="centerX" id="ku3-C8-HHs"/>
+                            <constraint firstAttribute="trailing" secondItem="VEI-KD-bsx" secondAttribute="trailing" id="nDP-ZM-ICG"/>
+                            <constraint firstItem="dPU-Ln-zMc" firstAttribute="top" secondItem="umA-Fb-GHU" secondAttribute="bottom" constant="26" id="u3V-Xh-2dL"/>
+                            <constraint firstAttribute="trailing" secondItem="nri-bX-yvx" secondAttribute="trailing" id="zcT-Qi-YP6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="nri-bX-yvx" id="x0Z-7G-m7J"/>
+                        <outlet property="locationTextField" destination="dPU-Ln-zMc" id="HUS-gL-oI4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEy-qK-Wdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="1000"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="done" width="46" height="33"/>
+        <image name="timer" width="22" height="22"/>
+    </resources>
+</document>

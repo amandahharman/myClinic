@@ -19,8 +19,11 @@
 		E0805EF11DBE585100648B04 /* myClinicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805EF01DBE585100648B04 /* myClinicUITests.swift */; };
 		E0B0278F1DE3F13700A35AF6 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0278E1DE3F13700A35AF6 /* Calendar.storyboard */; };
 		E0B027921DE3F19D00A35AF6 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B027901DE3F19D00A35AF6 /* Log.storyboard */; };
-		E0B027941DE3F1E800A35AF6 /* Medications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B027931DE3F1E800A35AF6 /* Medications.storyboard */; };
 		E0B027971DE3F24B00A35AF6 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B027951DE3F24B00A35AF6 /* UserInfo.storyboard */; };
+		E0B027991DE3F44600A35AF6 /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B027981DE3F44600A35AF6 /* AppointmentsViewController.swift */; };
+		E0B0279B1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */; };
+		E0B0279E1DE3FA4800A35AF6 /* Appointments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0279C1DE3FA4800A35AF6 /* Appointments.storyboard */; };
+		E0B027B51DEA632600A35AF6 /* AddAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B027B41DEA632600A35AF6 /* AddAppointmentViewController.swift */; };
 		E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745511DD39CD600597ED2 /* NetworkManager.swift */; };
 		E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */; };
 		E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */; };
@@ -74,8 +77,11 @@
 		E0805EF21DBE585100648B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0B0278E1DE3F13700A35AF6 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		E0B027911DE3F19D00A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Log.storyboard; sourceTree = "<group>"; };
-		E0B027931DE3F1E800A35AF6 /* Medications.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Medications.storyboard; sourceTree = "<group>"; };
 		E0B027961DE3F24B00A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserInfo.storyboard; sourceTree = "<group>"; };
+		E0B027981DE3F44600A35AF6 /* AppointmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
+		E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
+		E0B0279D1DE3FA4800A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Appointments.storyboard; sourceTree = "<group>"; };
+		E0B027B41DEA632600A35AF6 /* AddAppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointmentViewController.swift; sourceTree = "<group>"; };
 		E0D745511DD39CD600597ED2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -175,7 +181,7 @@
 				E0805F481DC10CA700648B04 /* UserInfo */,
 				E0805F491DC10CC100648B04 /* Calendar */,
 				E0805F4A1DC10CCD00648B04 /* Log */,
-				E0805F4B1DC10CD200648B04 /* Medications */,
+				E0805F4B1DC10CD200648B04 /* Appointments */,
 				E0805F441DC10BC900648B04 /* Resources */,
 			);
 			path = myClinic;
@@ -260,12 +266,15 @@
 			name = Log;
 			sourceTree = "<group>";
 		};
-		E0805F4B1DC10CD200648B04 /* Medications */ = {
+		E0805F4B1DC10CD200648B04 /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
-				E0B027931DE3F1E800A35AF6 /* Medications.storyboard */,
+				E0B0279C1DE3FA4800A35AF6 /* Appointments.storyboard */,
+				E0B027981DE3F44600A35AF6 /* AppointmentsViewController.swift */,
+				E0B027B41DEA632600A35AF6 /* AddAppointmentViewController.swift */,
+				E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */,
 			);
-			name = Medications;
+			name = Appointments;
 			sourceTree = "<group>";
 		};
 		E0D7454E1DD39BB300597ED2 /* Managers */ = {
@@ -395,8 +404,8 @@
 				E0B0278F1DE3F13700A35AF6 /* Calendar.storyboard in Resources */,
 				E0805ED81DBE585100648B04 /* Assets.xcassets in Resources */,
 				E0805ED31DBE585100648B04 /* Main.storyboard in Resources */,
-				E0B027941DE3F1E800A35AF6 /* Medications.storyboard in Resources */,
 				E0B027921DE3F19D00A35AF6 /* Log.storyboard in Resources */,
+				E0B0279E1DE3FA4800A35AF6 /* Appointments.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +481,7 @@
 				E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */,
 				E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */,
 				E0E24A831DDA29700054D962 /* Color.swift in Sources */,
+				E0B027991DE3F44600A35AF6 /* AppointmentsViewController.swift in Sources */,
 				E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */,
 				E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */,
 				E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */,
@@ -480,7 +490,9 @@
 				E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */,
 				E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */,
 				E05F00341DE3A27E00DB3723 /* EditSymptomViewController.swift in Sources */,
+				E0B0279B1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift in Sources */,
 				E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */,
+				E0B027B51DEA632600A35AF6 /* AddAppointmentViewController.swift in Sources */,
 				E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */,
 				E0E41D161DDAE58600F081A8 /* LogTableViewCell.swift in Sources */,
 			);
@@ -548,6 +560,14 @@
 				E0B027961DE3F24B00A35AF6 /* Base */,
 			);
 			name = UserInfo.storyboard;
+			sourceTree = "<group>";
+		};
+		E0B0279C1DE3FA4800A35AF6 /* Appointments.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0B0279D1DE3FA4800A35AF6 /* Base */,
+			);
+			name = Appointments.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

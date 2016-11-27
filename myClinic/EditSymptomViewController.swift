@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import CoreData
 
 typealias UserAdditionCallback = (_ time:Date, _ desc: String?) -> Void
 
 class EditSymptomViewController: UIViewController, UITextFieldDelegate{
 
-    var symptom: Symptom?
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var noteField: UITextField!
     var selectedTime: Date!
