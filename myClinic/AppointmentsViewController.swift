@@ -25,12 +25,11 @@ class AppointmentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: "AppointmentsCell")
         tableView.delegate = self
         tableView.dataSource = self
         print(NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true))
         fetchRequest(request: appointmentsFetchRequest)
+        tableView.reloadData()
         
     }
     
@@ -125,25 +124,29 @@ extension AppointmentsViewController: NSFetchedResultsControllerDelegate {
 
 
 extension AppointmentsViewController: UITableViewDataSource, UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController?.sections?.count ?? 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController?.sections else {
-            return 0
+            return 1
         }
         let sectionInfo = sections[section]
         return sectionInfo.numberOfObjects
         
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "AppointmentsCell"){
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AppointmentsCell") as! AppointmentsTableViewCell
             if let object = fetchedResultsController?.object(at: indexPath ){
                 configureCell(cell: cell, object: object)
+                return cell
             }
-            
+            cell.locationLabel.text = "No appointments to show"
             return cell
         }
-        return UITableViewCell()
-    }
+        
+   
     
     @nonobjc func tableView(_tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
@@ -159,11 +162,6 @@ extension AppointmentsViewController: UITableViewDataSource, UITableViewDelegate
         
     }
     
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultsController?.sections?.count ?? 0
-    }
     
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

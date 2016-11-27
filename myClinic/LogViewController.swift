@@ -19,13 +19,13 @@ class LogViewController: UIViewController {
     var loggedSymptoms = [Symptom]()
     
     
-    var symptoms:[String:Bool] = [SymptomDesc.Headache.rawValue:false,
-                                  SymptomDesc.Dizziness.rawValue:false,
-                                  SymptomDesc.Fever.rawValue:false,
-                                  SymptomDesc.Nausea.rawValue:false,
-                                  SymptomDesc.Sleeplessness.rawValue:false,
-                                  SymptomDesc.Diarrhea.rawValue:false,
-                                  SymptomDesc.Constipation.rawValue:false]
+    var symptoms:[String:(Bool,String,Date)] = [SymptomDesc.Headache.rawValue:(false,"", Date()),
+                                                SymptomDesc.Dizziness.rawValue:(false,"", Date()),
+                                                SymptomDesc.Fever.rawValue:(false,"", Date()),
+                                                SymptomDesc.Nausea.rawValue:(false,"", Date()),
+                                                SymptomDesc.Sleeplessness.rawValue:(false,"", Date()),
+                                                SymptomDesc.Diarrhea.rawValue:(false,"", Date()),
+                                                SymptomDesc.Constipation.rawValue:(false,"", Date())]
     
     var symptomSelected: Symptom?
     lazy var managedContext: NSManagedObjectContext = {
@@ -75,19 +75,17 @@ class LogViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        for (symptom, selected) in symptoms {
-            if selected {
+        for (symptom, info) in symptoms {
+            if info.0 {
                 let entity =  NSEntityDescription.entity(forEntityName: "Symptom",
                                                          in:managedContext)
                 let newSymptom = Symptom(entity: entity!,
                                          insertInto: managedContext)
                 newSymptom.name = symptom
+                newSymptom.desc = info.1
+                newSymptom.time = info.2 as NSDate
                 f.dateFormat = "yyyy MM dd"
                 newSymptom.date = f.string(from: presentedDate)
-                newSymptom.desc = newSymptomDesc
-                newSymptom.time = newSymptomTime as NSDate?
-                loggedSymptoms.append(newSymptom)
-                
             }
         }
         saveSymptoms()
@@ -102,11 +100,11 @@ class LogViewController: UIViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToSymptomDetail"{
+        if segue.identifier == "ToSymptomDetail" {
             let destinationVC = segue.destination as! EditSymptomViewController
-            destinationVC.userCallback = { time, desc in
-                self.newSymptomTime = time
-                self.newSymptomDesc = desc
+            destinationVC.userAdditionCallback = { time, desc in
+                self.symptoms[sender as! String]?.2 = time
+                self.symptoms[sender as! String]?.1 = desc!
             }
         }
     }
@@ -135,12 +133,14 @@ extension LogViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.cellForRow(at: indexPath) as! LogTableViewCell
         cell.selectedCheck.isHidden = !cell.selectedCheck.isHidden
         cell.selectedView.isHidden = !cell.selectedView.isHidden
-        if let symptom = cell.symptomLabel.text {
-            if let isChecked = symptoms[symptom] {
-                symptoms[symptom] = !isChecked
-            }
+        
+        guard let symptom = cell.symptomLabel.text else {
+            return
         }
-        performSegue(withIdentifier: "ToSymptomDetail", sender: nil)
+        if let isChecked = symptoms[symptom]?.0 {
+            symptoms[symptom]?.0 = !isChecked
+        }
+        performSegue(withIdentifier: "ToSymptomDetail", sender: symptom)
     }
     
 }

@@ -75,6 +75,13 @@ class CalendarViewController: UIViewController, NSFetchedResultsControllerDelega
         calendarView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchRequest(request: symptomFetchRequest, date: f.string(from: self.presentedDate))
+        tableView.reloadData()
+
+    }
+    
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         self.calendarView.scrollToNextSegment(){
             if self.presentedMonth < 12{
@@ -103,6 +110,8 @@ class CalendarViewController: UIViewController, NSFetchedResultsControllerDelega
         presentedYear = NSCalendar.current.component(.year, from: startDate)
         monthLabel.text = monthName.uppercased()
         yearLabel.text = String(presentedYear)
+
+        
     }
     
     func fetchRequest(request: NSFetchRequest<NSFetchRequestResult>, date: String){
