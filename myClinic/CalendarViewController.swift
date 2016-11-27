@@ -53,7 +53,8 @@ class CalendarViewController: UIViewController, NSFetchedResultsControllerDelega
     
     var fetchedResultsController: NSFetchedResultsController<NSManagedObject>?
     let symptomFetchRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Symptom")
-    
+    let appointmentsFetchRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Appointment")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "yyyy MM dd"
