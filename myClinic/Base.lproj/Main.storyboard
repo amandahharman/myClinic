@@ -13,7 +13,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9q8-Vg-ocH" customClass="TabBarViewController" customModule="myClinic" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="w3y-be-ifB">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" id="w3y-be-ifB">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
