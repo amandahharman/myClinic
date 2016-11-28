@@ -155,7 +155,10 @@ extension AppointmentsViewController: UITableViewDataSource, UITableViewDelegate
     func configureCell(cell: UITableViewCell, object: NSManagedObject){
         if let cell = cell as? AppointmentsTableViewCell {
             if let appointment = object as? Appointment{
-                cell.dateLabel.text = appointment.date?.description
+                let formatter = DateFormatter()
+                formatter.dateStyle = .full
+                formatter.timeStyle = .short
+                cell.dateLabel.text = formatter.string(from: appointment.date as! Date)
                 cell.locationLabel.text = appointment.location
             }
         }

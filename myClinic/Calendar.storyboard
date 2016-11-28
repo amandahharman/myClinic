@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="INT-LX-aha">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WoA-VW-mRD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nzd-pp-dXt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTU-j3-tga">
@@ -196,10 +197,9 @@
                             <constraint firstItem="rTU-j3-tga" firstAttribute="top" secondItem="nzd-pp-dXt" secondAttribute="topMargin" id="z4c-05-h5G"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="calendar" id="VLF-1t-HAM"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="VLF-1t-HAM"/>
                     <navigationItem key="navigationItem" id="5uM-ih-d4K"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
                     <connections>
                         <outlet property="calendarView" destination="j0e-TI-Q3a" id="etz-XP-7Qk"/>
                         <outlet property="fri" destination="hwL-1f-r8J" id="VeQ-gn-Lt8"/>

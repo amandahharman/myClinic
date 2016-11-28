@@ -26,9 +26,6 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hO0-OP-vVB">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="427" id="SiD-Zz-yVa"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppointmentsCell" rowHeight="72" id="0kd-1g-iFA" customClass="AppointmentsTableViewCell" customModule="myClinic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="72"/>
@@ -37,47 +34,41 @@
                                             <frame key="frameInset" width="375" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gbK-u4-Mcw">
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trz-2E-vD4">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5E-9O-vvh">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-ox-G6r">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trz-2E-vD4">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gbK-u4-Mcw" secondAttribute="trailing" constant="8" id="HW6-Yo-wVc"/>
-                                                <constraint firstItem="gbK-u4-Mcw" firstAttribute="leading" secondItem="HlL-ty-xeW" secondAttribute="leadingMargin" constant="8" id="KQU-AT-CzV"/>
+                                                <constraint firstItem="J5c-ox-G6r" firstAttribute="top" secondItem="Trz-2E-vD4" secondAttribute="bottom" constant="8" id="78l-VR-c7n"/>
+                                                <constraint firstItem="Trz-2E-vD4" firstAttribute="top" secondItem="HlL-ty-xeW" secondAttribute="topMargin" id="CY3-RQ-5Mv"/>
+                                                <constraint firstItem="Trz-2E-vD4" firstAttribute="leading" secondItem="HlL-ty-xeW" secondAttribute="leadingMargin" constant="8" id="LCa-i5-dYd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Trz-2E-vD4" secondAttribute="trailing" constant="8" id="RJE-v6-nL8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="J5c-ox-G6r" secondAttribute="trailing" constant="8" id="Ua0-7x-NUl"/>
-                                                <constraint firstItem="gbK-u4-Mcw" firstAttribute="top" secondItem="HlL-ty-xeW" secondAttribute="topMargin" id="Y7e-iI-Ou3"/>
                                                 <constraint firstItem="J5c-ox-G6r" firstAttribute="leading" secondItem="HlL-ty-xeW" secondAttribute="leadingMargin" constant="8" id="eTK-xc-EIk"/>
-                                                <constraint firstItem="J5c-ox-G6r" firstAttribute="top" secondItem="gbK-u4-Mcw" secondAttribute="bottom" constant="8" id="fe2-dE-OTi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="Trz-2E-vD4" id="aCC-Fu-Fb2"/>
                                             <outlet property="locationLabel" destination="J5c-ox-G6r" id="EYi-sH-XjN"/>
-                                            <outlet property="timeLabel" destination="w5E-9O-vvh" id="Rid-Ma-kcd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlA-Fx-cTn">
                                 <color key="backgroundColor" red="0.4431372549" green="0.80000000000000004" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="+">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="HKE-2b-aMO"/>
+                                    <constraint firstAttribute="width" constant="75" id="xVn-VE-Vcl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title=" ADD  ">
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -88,16 +79,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.67450980390000004" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2nT-p0-Pf5" firstAttribute="centerX" secondItem="cns-aP-t88" secondAttribute="centerX" id="0eZ-Tb-A2E"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XlA-Fx-cTn" secondAttribute="trailing" constant="8" id="7oQ-Io-S1e"/>
-                            <constraint firstItem="06e-mC-LcZ" firstAttribute="top" secondItem="hO0-OP-vVB" secondAttribute="bottom" id="BZa-IS-CsC"/>
-                            <constraint firstItem="hO0-OP-vVB" firstAttribute="leading" secondItem="cns-aP-t88" secondAttribute="leading" id="Rjh-sa-R4g"/>
-                            <constraint firstItem="2nT-p0-Pf5" firstAttribute="top" secondItem="ofH-zV-qya" secondAttribute="bottom" constant="20" id="c2i-2C-78s"/>
-                            <constraint firstItem="hO0-OP-vVB" firstAttribute="top" secondItem="XlA-Fx-cTn" secondAttribute="bottom" constant="8" id="fIu-Gh-kf8"/>
-                            <constraint firstAttribute="trailing" secondItem="hO0-OP-vVB" secondAttribute="trailing" id="qjv-1a-QNy"/>
+                            <constraint firstItem="2nT-p0-Pf5" firstAttribute="centerX" secondItem="cns-aP-t88" secondAttribute="centerX" id="21A-32-9j9"/>
+                            <constraint firstItem="XlA-Fx-cTn" firstAttribute="top" secondItem="2nT-p0-Pf5" secondAttribute="bottom" priority="998" constant="55" id="9w3-KR-pf4"/>
+                            <constraint firstItem="XlA-Fx-cTn" firstAttribute="centerX" secondItem="cns-aP-t88" secondAttribute="centerX" id="JKt-mZ-DjD"/>
+                            <constraint firstItem="2nT-p0-Pf5" firstAttribute="top" secondItem="ofH-zV-qya" secondAttribute="bottom" constant="20" id="QHP-FI-6w5"/>
+                            <constraint firstItem="06e-mC-LcZ" firstAttribute="top" secondItem="hO0-OP-vVB" secondAttribute="bottom" id="SUw-pG-0Kj"/>
+                            <constraint firstItem="hO0-OP-vVB" firstAttribute="top" secondItem="XlA-Fx-cTn" secondAttribute="bottom" constant="26" id="T3i-IK-91O"/>
+                            <constraint firstItem="hO0-OP-vVB" firstAttribute="leading" secondItem="cns-aP-t88" secondAttribute="leading" id="ldI-Bk-4Hx"/>
+                            <constraint firstAttribute="trailing" secondItem="hO0-OP-vVB" secondAttribute="trailing" id="pvX-jk-rgk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="timer" id="NQS-aR-vIe"/>
+                    <tabBarItem key="tabBarItem" title="Appointments" image="timer" id="NQS-aR-vIe"/>
                     <navigationItem key="navigationItem" id="tgk-1a-PjW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WtO-jl-U5z"/>
                     </navigationItem>
@@ -122,7 +114,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nri-bX-yvx">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="nri-bX-yvx">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <date key="date" timeIntervalSinceReferenceDate="501799577.59258699">
                                     <!--2016-11-25 20:46:17 +0000-->

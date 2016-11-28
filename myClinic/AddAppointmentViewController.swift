@@ -51,8 +51,7 @@ class AddAppointmentViewController: UIViewController, UITextFieldDelegate {
                                                  in:managedContext)
         let newAppointment = Appointment(entity: entity!,
                                          insertInto: managedContext)
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
+
         newAppointment.name = "Doctor Appointment"
         newAppointment.date = selectedDate as NSDate?
         newAppointment.location = locationTextField.text
