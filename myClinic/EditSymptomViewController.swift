@@ -7,17 +7,15 @@
 //
 
 import UIKit
-import CoreData
 
 typealias UserAdditionCallback = (_ time:Date, _ desc: String?) -> Void
 
 class EditSymptomViewController: UIViewController, UITextFieldDelegate{
 
-    var symptom: Symptom?
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var noteField: UITextField!
     var selectedTime: Date!
-    var userCallback: UserAdditionCallback!
+    var userAdditionCallback: UserAdditionCallback!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +37,7 @@ class EditSymptomViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
-        self.userCallback(selectedTime, noteField.text)
+        userAdditionCallback(selectedTime,noteField.text! )
         self.dismiss(animated: true, completion: nil)
     }
 

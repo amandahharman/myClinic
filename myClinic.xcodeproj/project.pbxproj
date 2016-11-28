@@ -17,10 +17,13 @@
 		E0805EDB1DBE585100648B04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805ED91DBE585100648B04 /* LaunchScreen.storyboard */; };
 		E0805EE61DBE585100648B04 /* myClinicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805EE51DBE585100648B04 /* myClinicTests.swift */; };
 		E0805EF11DBE585100648B04 /* myClinicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805EF01DBE585100648B04 /* myClinicUITests.swift */; };
-		E0805F001DBE95F200648B04 /* Medications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805EFE1DBE95F200648B04 /* Medications.storyboard */; };
-		E0805F021DBE964300648B04 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F011DBE964300648B04 /* Log.storyboard */; };
-		E0805F051DBE965E00648B04 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F031DBE965E00648B04 /* Calendar.storyboard */; };
-		E0805F071DBE967500648B04 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805F061DBE967500648B04 /* UserInfo.storyboard */; };
+		E0B0278F1DE3F13700A35AF6 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0278E1DE3F13700A35AF6 /* Calendar.storyboard */; };
+		E0B027921DE3F19D00A35AF6 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B027901DE3F19D00A35AF6 /* Log.storyboard */; };
+		E0B027971DE3F24B00A35AF6 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B027951DE3F24B00A35AF6 /* UserInfo.storyboard */; };
+		E0B027991DE3F44600A35AF6 /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B027981DE3F44600A35AF6 /* AppointmentsViewController.swift */; };
+		E0B0279B1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */; };
+		E0B0279E1DE3FA4800A35AF6 /* Appointments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0279C1DE3FA4800A35AF6 /* Appointments.storyboard */; };
+		E0B027B51DEA632600A35AF6 /* AddAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B027B41DEA632600A35AF6 /* AddAppointmentViewController.swift */; };
 		E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745511DD39CD600597ED2 /* NetworkManager.swift */; };
 		E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */; };
 		E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */; };
@@ -72,10 +75,13 @@
 		E0805EEC1DBE585100648B04 /* myClinicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myClinicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0805EF01DBE585100648B04 /* myClinicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myClinicUITests.swift; sourceTree = "<group>"; };
 		E0805EF21DBE585100648B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0805EFF1DBE95F200648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medications.storyboard; sourceTree = "<group>"; };
-		E0805F011DBE964300648B04 /* Log.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Log.storyboard; sourceTree = "<group>"; };
-		E0805F041DBE965E00648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
-		E0805F061DBE967500648B04 /* UserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
+		E0B0278E1DE3F13700A35AF6 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		E0B027911DE3F19D00A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Log.storyboard; sourceTree = "<group>"; };
+		E0B027961DE3F24B00A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserInfo.storyboard; sourceTree = "<group>"; };
+		E0B027981DE3F44600A35AF6 /* AppointmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
+		E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
+		E0B0279D1DE3FA4800A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Appointments.storyboard; sourceTree = "<group>"; };
+		E0B027B41DEA632600A35AF6 /* AddAppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointmentViewController.swift; sourceTree = "<group>"; };
 		E0D745511DD39CD600597ED2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -175,7 +181,7 @@
 				E0805F481DC10CA700648B04 /* UserInfo */,
 				E0805F491DC10CC100648B04 /* Calendar */,
 				E0805F4A1DC10CCD00648B04 /* Log */,
-				E0805F4B1DC10CD200648B04 /* Medications */,
+				E0805F4B1DC10CD200648B04 /* Appointments */,
 				E0805F441DC10BC900648B04 /* Resources */,
 			);
 			path = myClinic;
@@ -231,7 +237,7 @@
 		E0805F481DC10CA700648B04 /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				E0805F061DBE967500648B04 /* UserInfo.storyboard */,
+				E0B027951DE3F24B00A35AF6 /* UserInfo.storyboard */,
 				E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */,
 			);
 			name = UserInfo;
@@ -240,7 +246,7 @@
 		E0805F491DC10CC100648B04 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				E0805F031DBE965E00648B04 /* Calendar.storyboard */,
+				E0B0278E1DE3F13700A35AF6 /* Calendar.storyboard */,
 				E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */,
 				E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */,
 				E0E24A7C1DDA04D40054D962 /* CellView.xib */,
@@ -252,7 +258,7 @@
 		E0805F4A1DC10CCD00648B04 /* Log */ = {
 			isa = PBXGroup;
 			children = (
-				E0805F011DBE964300648B04 /* Log.storyboard */,
+				E0B027901DE3F19D00A35AF6 /* Log.storyboard */,
 				E0E24A881DDA9EE60054D962 /* LogViewController.swift */,
 				E05F00331DE3A27E00DB3723 /* EditSymptomViewController.swift */,
 				E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */,
@@ -260,12 +266,15 @@
 			name = Log;
 			sourceTree = "<group>";
 		};
-		E0805F4B1DC10CD200648B04 /* Medications */ = {
+		E0805F4B1DC10CD200648B04 /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
-				E0805EFE1DBE95F200648B04 /* Medications.storyboard */,
+				E0B0279C1DE3FA4800A35AF6 /* Appointments.storyboard */,
+				E0B027981DE3F44600A35AF6 /* AppointmentsViewController.swift */,
+				E0B027B41DEA632600A35AF6 /* AddAppointmentViewController.swift */,
+				E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */,
 			);
-			name = Medications;
+			name = Appointments;
 			sourceTree = "<group>";
 		};
 		E0D7454E1DD39BB300597ED2 /* Managers */ = {
@@ -390,13 +399,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E24A7D1DDA04D40054D962 /* CellView.xib in Resources */,
-				E0805F071DBE967500648B04 /* UserInfo.storyboard in Resources */,
-				E0805F051DBE965E00648B04 /* Calendar.storyboard in Resources */,
+				E0B027971DE3F24B00A35AF6 /* UserInfo.storyboard in Resources */,
 				E0805EDB1DBE585100648B04 /* LaunchScreen.storyboard in Resources */,
-				E0805F001DBE95F200648B04 /* Medications.storyboard in Resources */,
+				E0B0278F1DE3F13700A35AF6 /* Calendar.storyboard in Resources */,
 				E0805ED81DBE585100648B04 /* Assets.xcassets in Resources */,
 				E0805ED31DBE585100648B04 /* Main.storyboard in Resources */,
-				E0805F021DBE964300648B04 /* Log.storyboard in Resources */,
+				E0B027921DE3F19D00A35AF6 /* Log.storyboard in Resources */,
+				E0B0279E1DE3FA4800A35AF6 /* Appointments.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +481,7 @@
 				E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */,
 				E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */,
 				E0E24A831DDA29700054D962 /* Color.swift in Sources */,
+				E0B027991DE3F44600A35AF6 /* AppointmentsViewController.swift in Sources */,
 				E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */,
 				E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */,
 				E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */,
@@ -480,7 +490,9 @@
 				E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */,
 				E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */,
 				E05F00341DE3A27E00DB3723 /* EditSymptomViewController.swift in Sources */,
+				E0B0279B1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift in Sources */,
 				E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */,
+				E0B027B51DEA632600A35AF6 /* AddAppointmentViewController.swift in Sources */,
 				E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */,
 				E0E41D161DDAE58600F081A8 /* LogTableViewCell.swift in Sources */,
 			);
@@ -534,20 +546,28 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		E0805EFE1DBE95F200648B04 /* Medications.storyboard */ = {
+		E0B027901DE3F19D00A35AF6 /* Log.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E0805EFF1DBE95F200648B04 /* Base */,
+				E0B027911DE3F19D00A35AF6 /* Base */,
 			);
-			name = Medications.storyboard;
+			name = Log.storyboard;
 			sourceTree = "<group>";
 		};
-		E0805F031DBE965E00648B04 /* Calendar.storyboard */ = {
+		E0B027951DE3F24B00A35AF6 /* UserInfo.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E0805F041DBE965E00648B04 /* Base */,
+				E0B027961DE3F24B00A35AF6 /* Base */,
 			);
-			name = Calendar.storyboard;
+			name = UserInfo.storyboard;
+			sourceTree = "<group>";
+		};
+		E0B0279C1DE3FA4800A35AF6 /* Appointments.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0B0279D1DE3FA4800A35AF6 /* Base */,
+			);
+			name = Appointments.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
