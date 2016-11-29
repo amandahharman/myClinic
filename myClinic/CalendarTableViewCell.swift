@@ -5,6 +5,7 @@
 //  Created by Amanda Harman on 11/14/16.
 //  Copyright © 2016 Amanda Harman. All rights reserved.
 //
+// Hooks up attributes to User INterface for Calendar Table View Cell
 
 import UIKit
 

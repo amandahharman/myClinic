@@ -24,6 +24,7 @@ class AddAppointmentViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.locationTextField.delegate = self
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         selectedDate = datePicker.date
     }
 

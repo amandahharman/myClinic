@@ -5,9 +5,11 @@
 //  Created by Amanda Harman on 11/14/16.
 //  Copyright © 2016 Amanda Harman. All rights reserved.
 //
+// Modifies appearance of the Tab Bar
 
 import UIKit
 
+//
 class TabBarViewController: UITabBarController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {

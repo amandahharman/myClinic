@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		40EAC30A50F811EDCB6DD62A /* Pods_myClinic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */; };
+		E00D1FF61DECD2B300E8DAC9 /* Medications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E00D1FF51DECD2B300E8DAC9 /* Medications.storyboard */; };
+		E00D1FF81DECD68E00E8DAC9 /* MedicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00D1FF71DECD68E00E8DAC9 /* MedicationsViewController.swift */; };
+		E00D1FFA1DECD69B00E8DAC9 /* AddMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00D1FF91DECD69B00E8DAC9 /* AddMedicationViewController.swift */; };
+		E00D1FFC1DECD6E900E8DAC9 /* MedicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00D1FFB1DECD6E900E8DAC9 /* MedicationTableViewCell.swift */; };
+		E00D1FFE1DED34DF00E8DAC9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00D1FFD1DED34DF00E8DAC9 /* TabBarViewController.swift */; };
 		E05F00341DE3A27E00DB3723 /* EditSymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05F00331DE3A27E00DB3723 /* EditSymptomViewController.swift */; };
 		E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECD1DBE585000648B04 /* AppDelegate.swift */; };
-		E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805ECF1DBE585000648B04 /* LogInViewController.swift */; };
 		E0805ED31DBE585100648B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0805ED11DBE585100648B04 /* Main.storyboard */; };
 		E0805ED61DBE585100648B04 /* myClinic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0805ED41DBE585100648B04 /* myClinic.xcdatamodeld */; };
 		E0805ED81DBE585100648B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0805ED71DBE585100648B04 /* Assets.xcassets */; };
@@ -19,20 +23,15 @@
 		E0805EF11DBE585100648B04 /* myClinicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0805EF01DBE585100648B04 /* myClinicUITests.swift */; };
 		E0B0278F1DE3F13700A35AF6 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0278E1DE3F13700A35AF6 /* Calendar.storyboard */; };
 		E0B027921DE3F19D00A35AF6 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B027901DE3F19D00A35AF6 /* Log.storyboard */; };
-		E0B027971DE3F24B00A35AF6 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B027951DE3F24B00A35AF6 /* UserInfo.storyboard */; };
 		E0B027991DE3F44600A35AF6 /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B027981DE3F44600A35AF6 /* AppointmentsViewController.swift */; };
 		E0B0279B1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */; };
 		E0B0279E1DE3FA4800A35AF6 /* Appointments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0279C1DE3FA4800A35AF6 /* Appointments.storyboard */; };
 		E0B027B51DEA632600A35AF6 /* AddAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B027B41DEA632600A35AF6 /* AddAppointmentViewController.swift */; };
-		E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D745511DD39CD600597ED2 /* NetworkManager.swift */; };
-		E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */; };
 		E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */; };
 		E0E24A7D1DDA04D40054D962 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E24A7C1DDA04D40054D962 /* CellView.xib */; };
 		E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A7E1DDA05170054D962 /* CellView.swift */; };
-		E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A801DDA23A90054D962 /* TabBarViewController.swift */; };
 		E0E24A831DDA29700054D962 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A821DDA29700054D962 /* Color.swift */; };
 		E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */; };
-		E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */; };
 		E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E24A881DDA9EE60054D962 /* LogViewController.swift */; };
 		E0E41D161DDAE58600F081A8 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */; };
 		E0E7938C1DDFC1660099C70A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E793891DDFC1660099C70A /* Alamofire.framework */; };
@@ -60,10 +59,14 @@
 /* Begin PBXFileReference section */
 		A72E12C242DC6B9A4860D98B /* Pods-myClinic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myClinic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myClinic/Pods-myClinic.debug.xcconfig"; sourceTree = "<group>"; };
 		AB3AC10720DBE28BF232CD20 /* Pods_myClinic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myClinic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00D1FF51DECD2B300E8DAC9 /* Medications.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Medications.storyboard; sourceTree = "<group>"; };
+		E00D1FF71DECD68E00E8DAC9 /* MedicationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsViewController.swift; sourceTree = "<group>"; };
+		E00D1FF91DECD69B00E8DAC9 /* AddMedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicationViewController.swift; sourceTree = "<group>"; };
+		E00D1FFB1DECD6E900E8DAC9 /* MedicationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationTableViewCell.swift; sourceTree = "<group>"; };
+		E00D1FFD1DED34DF00E8DAC9 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E05F00331DE3A27E00DB3723 /* EditSymptomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSymptomViewController.swift; sourceTree = "<group>"; };
 		E0805ECA1DBE585000648B04 /* myClinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myClinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0805ECD1DBE585000648B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E0805ECF1DBE585000648B04 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E0805ED21DBE585100648B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0805ED51DBE585100648B04 /* myClinic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myClinic.xcdatamodel; sourceTree = "<group>"; };
 		E0805ED71DBE585100648B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,20 +80,15 @@
 		E0805EF21DBE585100648B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0B0278E1DE3F13700A35AF6 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		E0B027911DE3F19D00A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Log.storyboard; sourceTree = "<group>"; };
-		E0B027961DE3F24B00A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserInfo.storyboard; sourceTree = "<group>"; };
 		E0B027981DE3F44600A35AF6 /* AppointmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
 		E0B0279D1DE3FA4800A35AF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Appointments.storyboard; sourceTree = "<group>"; };
 		E0B027B41DEA632600A35AF6 /* AddAppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointmentViewController.swift; sourceTree = "<group>"; };
-		E0D745511DD39CD600597ED2 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		E0E24A571DD7C49B0054D962 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E0E24A7C1DDA04D40054D962 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		E0E24A7E1DDA05170054D962 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
-		E0E24A801DDA23A90054D962 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E0E24A821DDA29700054D962 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = ../myClinic/Color.swift; sourceTree = "<group>"; };
 		E0E24A841DDA2CC00054D962 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
-		E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		E0E24A881DDA9EE60054D962 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		E0E41D151DDAE58600F081A8 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
 		E0E793891DDFC1660099C70A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/myClinic-gwvvyfsxuncxglgejwhtrplfeguu/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -175,13 +173,12 @@
 			children = (
 				E0805ED91DBE585100648B04 /* LaunchScreen.storyboard */,
 				E0805ECD1DBE585000648B04 /* AppDelegate.swift */,
-				E0805F461DC10BEB00648B04 /* Models */,
-				E0D7454E1DD39BB300597ED2 /* Managers */,
-				E0805F431DC10BAE00648B04 /* LogIn */,
-				E0805F481DC10CA700648B04 /* UserInfo */,
+				E00D1FFD1DED34DF00E8DAC9 /* TabBarViewController.swift */,
+				E0805F431DC10BAE00648B04 /* Main */,
 				E0805F491DC10CC100648B04 /* Calendar */,
 				E0805F4A1DC10CCD00648B04 /* Log */,
 				E0805F4B1DC10CD200648B04 /* Appointments */,
+				E0805F481DC10CA700648B04 /* Medications */,
 				E0805F441DC10BC900648B04 /* Resources */,
 			);
 			path = myClinic;
@@ -206,14 +203,12 @@
 			path = myClinicUITests;
 			sourceTree = "<group>";
 		};
-		E0805F431DC10BAE00648B04 /* LogIn */ = {
+		E0805F431DC10BAE00648B04 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				E0805ED11DBE585100648B04 /* Main.storyboard */,
-				E0E24A801DDA23A90054D962 /* TabBarViewController.swift */,
-				E0805ECF1DBE585000648B04 /* LogInViewController.swift */,
 			);
-			name = LogIn;
+			name = Main;
 			sourceTree = "<group>";
 		};
 		E0805F441DC10BC900648B04 /* Resources */ = {
@@ -226,21 +221,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		E0805F461DC10BEB00648B04 /* Models */ = {
+		E0805F481DC10CA700648B04 /* Medications */ = {
 			isa = PBXGroup;
 			children = (
-				E0E24A861DDA2DB20054D962 /* CalendarEvent.swift */,
+				E00D1FF51DECD2B300E8DAC9 /* Medications.storyboard */,
+				E00D1FF71DECD68E00E8DAC9 /* MedicationsViewController.swift */,
+				E00D1FFB1DECD6E900E8DAC9 /* MedicationTableViewCell.swift */,
+				E00D1FF91DECD69B00E8DAC9 /* AddMedicationViewController.swift */,
 			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		E0805F481DC10CA700648B04 /* UserInfo */ = {
-			isa = PBXGroup;
-			children = (
-				E0B027951DE3F24B00A35AF6 /* UserInfo.storyboard */,
-				E0E24A511DD3D0140054D962 /* UserInfoViewController.swift */,
-			);
-			name = UserInfo;
+			name = Medications;
 			sourceTree = "<group>";
 		};
 		E0805F491DC10CC100648B04 /* Calendar */ = {
@@ -275,14 +264,6 @@
 				E0B0279A1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift */,
 			);
 			name = Appointments;
-			sourceTree = "<group>";
-		};
-		E0D7454E1DD39BB300597ED2 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				E0D745511DD39CD600597ED2 /* NetworkManager.swift */,
-			);
-			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,11 +380,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E24A7D1DDA04D40054D962 /* CellView.xib in Resources */,
-				E0B027971DE3F24B00A35AF6 /* UserInfo.storyboard in Resources */,
 				E0805EDB1DBE585100648B04 /* LaunchScreen.storyboard in Resources */,
 				E0B0278F1DE3F13700A35AF6 /* Calendar.storyboard in Resources */,
 				E0805ED81DBE585100648B04 /* Assets.xcassets in Resources */,
 				E0805ED31DBE585100648B04 /* Main.storyboard in Resources */,
+				E00D1FF61DECD2B300E8DAC9 /* Medications.storyboard in Resources */,
 				E0B027921DE3F19D00A35AF6 /* Log.storyboard in Resources */,
 				E0B0279E1DE3FA4800A35AF6 /* Appointments.storyboard in Resources */,
 			);
@@ -478,22 +459,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0D745521DD39CD600597ED2 /* NetworkManager.swift in Sources */,
+				E00D1FFA1DECD69B00E8DAC9 /* AddMedicationViewController.swift in Sources */,
 				E0E24A891DDA9EE70054D962 /* LogViewController.swift in Sources */,
 				E0E24A831DDA29700054D962 /* Color.swift in Sources */,
 				E0B027991DE3F44600A35AF6 /* AppointmentsViewController.swift in Sources */,
 				E0E24A7F1DDA05170054D962 /* CellView.swift in Sources */,
-				E0805ED01DBE585000648B04 /* LogInViewController.swift in Sources */,
-				E0E24A871DDA2DB20054D962 /* CalendarEvent.swift in Sources */,
 				E0805ED61DBE585100648B04 /* myClinic.xcdatamodeld in Sources */,
 				E0805ECE1DBE585000648B04 /* AppDelegate.swift in Sources */,
-				E0E24A521DD3D0140054D962 /* UserInfoViewController.swift in Sources */,
 				E0E24A581DD7C49B0054D962 /* CalendarViewController.swift in Sources */,
+				E00D1FFE1DED34DF00E8DAC9 /* TabBarViewController.swift in Sources */,
+				E00D1FF81DECD68E00E8DAC9 /* MedicationsViewController.swift in Sources */,
 				E05F00341DE3A27E00DB3723 /* EditSymptomViewController.swift in Sources */,
 				E0B0279B1DE3F4FF00A35AF6 /* AppointmentsTableViewCell.swift in Sources */,
 				E0E24A851DDA2CC00054D962 /* CalendarTableViewCell.swift in Sources */,
 				E0B027B51DEA632600A35AF6 /* AddAppointmentViewController.swift in Sources */,
-				E0E24A811DDA23A90054D962 /* TabBarViewController.swift in Sources */,
+				E00D1FFC1DECD6E900E8DAC9 /* MedicationTableViewCell.swift in Sources */,
 				E0E41D161DDAE58600F081A8 /* LogTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,14 +532,6 @@
 				E0B027911DE3F19D00A35AF6 /* Base */,
 			);
 			name = Log.storyboard;
-			sourceTree = "<group>";
-		};
-		E0B027951DE3F24B00A35AF6 /* UserInfo.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0B027961DE3F24B00A35AF6 /* Base */,
-			);
-			name = UserInfo.storyboard;
 			sourceTree = "<group>";
 		};
 		E0B0279C1DE3FA4800A35AF6 /* Appointments.storyboard */ = {

@@ -5,6 +5,7 @@
 //  Created by Amanda Harman on 11/12/16.
 //  Copyright © 2016 Amanda Harman. All rights reserved.
 //
+// Sets up view for calendar and sets up a controller to handle input from user (e.g. date selection)
 
 import UIKit
 import JTAppleCalendar
@@ -46,11 +47,14 @@ class CalendarViewController: UIViewController {
         return f
     }()
     
+    //Retrieves the context for the app to access stored data
     lazy var managedContext: NSManagedObjectContext = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }()
     
+    
+    // Fetches information about symptoms from stored data
     let symptomsFetchRequest: NSFetchRequest<Symptom> = {
         let fetchRequest = NSFetchRequest<Symptom>(entityName: "Symptom")
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
@@ -61,6 +65,7 @@ class CalendarViewController: UIViewController {
     let appointmentsFetchRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Appointment")
     var fetchedSymptomsForSelectedDate = [Symptom]()
     
+    // Sets up the calendar and table view
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,16 +82,19 @@ class CalendarViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    // Reloads calendar view after the view appears to user
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         calendarView.reloadData()
     }
     
+    // Updates list of symptos right before the view reappears to user
     override func viewWillAppear(_ animated: Bool) {
         updateSymptomList(forDate: f.string(from: self.presentedDate))
         super.viewWillAppear(animated)
     }
     
+    // Responds to users click by switching the calendar to the next month
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         self.calendarView.scrollToNextSegment(){
             if self.presentedMonth < 12{
@@ -98,6 +106,7 @@ class CalendarViewController: UIViewController {
         }
     }
     
+        // Responds to users click by switching the calendar to the previous month
     @IBAction func previousButtonPressed(_ sender: UIButton) {
         self.calendarView.scrollToPreviousSegment(){
             if self.presentedMonth > 1{
@@ -109,6 +118,8 @@ class CalendarViewController: UIViewController {
         }
         
     }
+    
+    //Sets the labels describing the currently showing calendar
     func setupViewsOfCalendar(startDate: Date) {
         presentedMonth = NSCalendar.current.component(.month, from: startDate)
         let monthName = formatter.monthSymbols[(presentedMonth-1)] // 0 indexed array
@@ -117,6 +128,7 @@ class CalendarViewController: UIViewController {
         yearLabel.text = String(presentedYear)
     }
     
+    // Takes a date and fetches the list of symptoms that occur on the date
     func symptomsForDate(date: String) -> [Symptom]? {
         let fetchRequest = symptomsFetchRequest
         fetchRequest.predicate = NSPredicate(format: "date== %@", date)
@@ -132,7 +144,10 @@ class CalendarViewController: UIViewController {
     }
 }
 
-extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate{
+//MARK: JTCalendar Methods
+extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+    
+
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         let startDate = formatter.date(from: "2016 01 01")!
         let limitYear = NSCalendar.current.component(.year, from: Date()) + 2
@@ -147,6 +162,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         return parameters
     }
     
+    // Sets up the calendar cells
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
         let cell = cell as! CellView
         
@@ -158,10 +174,16 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         cell.eventIndicator.isHidden = false
     }
     
+    // Configures the calendar for the month switched to
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         calendar.reloadData()
         
     }
+    
+    // Sets the color indicators for days in the currently showing month and the day currently selected
+    /*
+     * handl
+     */
     func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState, date: Date) {
         guard let cell = view as? CellView  else {
             return
@@ -179,25 +201,29 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         }
         
     }
-    
+    // When a user selects date, this will retrieve the symptoms on the day for the table view and show that the day is selected
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         print("Cell selected at \(date)")
         updateSymptomList(forDate: f.string(from: date))
         handleCellSelection(view: cell, cellState: cellState, date: date)
     }
     
+    // When a day is deselected, the color of the day label will go back to normal
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState, date: date)
     }
 }
 
+//Mark: Table View
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
     
+    // Creates a lists indicating that symtoms exist on the currently selected day
     func updateSymptomList(forDate date: String) {
         fetchedSymptomsForSelectedDate = symptomsForDate(date: date) ?? []
         tableView.reloadData()
     }
     
+    // Sets labels of the table view cell with proper information
     func configureCell(cell: CalendarTableViewCell, object: NSManagedObject){
         if let symptom = object as? Symptom{
             cell.titleLabel.isHidden = false
@@ -217,6 +243,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+    // Sets up each table cell specific to the symptom it is associated with
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalendarTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CalendarEventCell") as! CalendarTableViewCell
         let symptom = fetchedSymptomsForSelectedDate[indexPath.row]
@@ -224,10 +251,12 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    // Sets the number of sections in table view
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Sets the number of rows to be however many symptoms are set for a specific date
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedSymptomsForSelectedDate.count
     }

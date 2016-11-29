@@ -21,6 +21,7 @@ class EditSymptomViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         self.noteField.delegate = self
         timePicker.datePickerMode = UIDatePickerMode.time
+        timePicker.setValue(UIColor.white, forKeyPath: "textColor")
         selectedTime = timePicker.date
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

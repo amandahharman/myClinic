@@ -5,6 +5,7 @@
 //  Created by Amanda Harman on 11/14/16.
 //  Copyright © 2016 Amanda Harman. All rights reserved.
 //
+// Formats Cell View for calendar
 
 import UIKit
 import JTAppleCalendar
@@ -30,6 +31,7 @@ class CellView: JTAppleDayCellView {
         return f
     }()
  
+    //Sets up the initial state of cell of calendar
     func setupCellBeforeDisplay(cellState: CellState, date: Date) {
         dayLabel.text =  cellState.text
         if cellState.dateBelongsTo == .thisMonth{
