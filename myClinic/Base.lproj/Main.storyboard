@@ -179,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="57" y="572"/>
         </scene>
-        <!--UserInfo-->
+        <!--Medications-->
         <scene sceneID="o8G-ba-fhQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="UserInfo" id="dSU-eK-EXN" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Medications" id="dSU-eK-EXN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="wQ4-Za-oCB"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1go-dx-X7m" userLabel="First Responder" sceneMemberID="firstResponder"/>

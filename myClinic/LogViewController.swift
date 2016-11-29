@@ -5,6 +5,7 @@
 //  Created by Amanda Harman on 11/14/16.
 //  Copyright © 2016 Amanda Harman. All rights reserved.
 //
+// Sets up view for logging symptoms and managing user interaction (e.g. selecting a symptom that occured)
 
 import UIKit
 import CoreData
@@ -55,8 +56,13 @@ class LogViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        nextDayButtonPressed(UIButton())
     }
     
+    /// Action for when user presses next day button
+    ///
+    /// - parameter sender: the button being pressed
+    /// - author: amanda
     @IBAction func nextDayButtonPressed(_ sender: UIButton) {
         if let date = Calendar.current.date(byAdding: .day, value: 1, to: presentedDate){
             presentedDate = date
@@ -65,6 +71,7 @@ class LogViewController: UIViewController {
         }
     }
     
+
     @IBAction func lastDayButtonPressed(_ sender: UIButton) {
         if let date = Calendar.current.date(byAdding: .day, value: -1, to: presentedDate){
             presentedDate = date
