@@ -5,6 +5,8 @@
 //  Created by Amanda Harman on 11/21/16.
 //  Copyright © 2016 Amanda Harman. All rights reserved.
 //
+// Formats table view cell for appointment and hooks up elements to UI
+
 
 import UIKit
 
