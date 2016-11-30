@@ -5,6 +5,7 @@
 //  Created by Amanda Harman on 10/24/16.
 //  Copyright © 2016 Amanda Harman. All rights reserved.
 //
+// Boiler plate code that comes with an Xcode project. Sets up Core Data stack
 
 import UIKit
 import CoreData
